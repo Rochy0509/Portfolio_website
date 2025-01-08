@@ -68,18 +68,19 @@
   window.addEventListener('load', toggleScrollTop);
   document.addEventListener('scroll', toggleScrollTop);
 
-  /**
+    /**
    * Animation on scroll function and init
    */
   function aosInit() {
     AOS.init({
-      duration: 600,
-      easing: 'ease-in-out',
-      once: true,
-      mirror: false
+      duration: 600,      // Animation duration in milliseconds
+      easing: 'ease-in-out', // Animation easing
+      once: false,        // Allow animations to trigger multiple times
+      mirror: true        // Trigger animations when scrolling back up
     });
   }
   window.addEventListener('load', aosInit);
+
 
   /**
    * Init typed.js
