@@ -1344,6 +1344,36 @@ proj{
   fill: #11dbcf;
 }
 
+/* New Skills Grid Styles */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px; /* Added bottom margin to separate from the services row */
+}
+
+.skills-grid .skill-item {
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.skills-grid .skill-item img {
+  height: 64px;
+  margin-bottom: 10px;
+}
+
+.skills-grid .skill-item p {
+  font-size: 20px;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Projects Section
