@@ -513,6 +513,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   function randomSidePos(length) {
     return Math.ceil(Math.random() * length);
   }
+  
 
   // Draw Ball
   function renderBalls() {
@@ -641,6 +642,41 @@ document.addEventListener("DOMContentLoaded", function(event) {
   goMovie();
 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the modal elements
+  const modal = document.getElementById("projectModal");
+  const modalInner = document.getElementById("project-modal-inner");
+  const modalClose = document.querySelector(".project-modal-close");
+
+  // Attach event listeners to each "Read More" button
+  document.querySelectorAll("figure.snip1311 .read-more").forEach((button) => {
+    button.addEventListener("click", function() {
+      // Get the extra content from the closest figure
+      const figure = button.closest("figure.snip1311");
+      const extraContent = figure.querySelector(".modal-details");
+      if (extraContent) {
+        // Set the modal's inner HTML to the extra content's HTML
+        modalInner.innerHTML = extraContent.innerHTML;
+        // Open the modal
+        modal.classList.add("open");
+      }
+    });
+  });
+
+  // Close the modal when the close button is clicked
+  modalClose.addEventListener("click", function() {
+    modal.classList.remove("open");
+  });
+
+  // Optional: Close the modal when clicking outside the content area
+  window.addEventListener("click", function(e) {
+    if (e.target === modal) {
+      modal.classList.remove("open");
+    }
+  });
+});
+
 
 
 

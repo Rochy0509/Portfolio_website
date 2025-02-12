@@ -1378,130 +1378,70 @@ proj{
 /*--------------------------------------------------------------
 # Projects Section
 --------------------------------------------------------------*/
+/* Projects Container */
 .project-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: white;
-}
-figure.snip1311.reading {
-overflow-y: auto;
+  gap: 20px;
 }
 
+/* Project Figure */
 figure.snip1311 {
-font-family: 'Raleway', Arial, sans-serif;
-position: relative;
-float: left;
-overflow-y: hidden;
-overflow-x: hidden;
-margin: 10px 1%;
-min-width: 230px;
-max-width: 360px;
-max-height: 256px;
-width: 500rem;
-color: #ffffff;
-text-align: left;
-background-color: #07090c;
-font-size: 16px;
--webkit-perspective: 50em;
-perspective: 50em;
-border: 3px solid #555;
-border-radius: 18px;
-}
-figure.snip1311 * {
--webkit-box-sizing: border-box;
-box-sizing: border-box;
--webkit-transition: all 0.6s ease;
-transition: all 0.6s ease;
-}
-figure.snip1311 img {
-max-width: 110%;
--webkit-transition-delay: 0.2s;
-transition-delay: 0.2s;
-backface-visibility: hidden;
-height: 258px;
-}
-@media all and (max-width: 500px) {
-figure.snip1311 img {
-border: none;
-}
-}
-figure.snip1311 figcaption {
-position: absolute;
-top: 50%;
-left: 0;
-width: 100%;
--webkit-transform: rotateX(90deg) translate(0%, -50%);
-transform: rotateX(90deg) translate(0%, -50%);
--webkit-transform-origin: 0% 0%;
--ms-transform-origin: 0% 0%;
-transform-origin: 0% 0%;
-z-index: 1;
-opacity: 0;
-padding: 0 30px;
-}
-figure.snip1311 h3,
-figure.snip1311 p {
-line-height: 1.5em;
-}
-figure.snip1311 h3 {
-margin: 0;
-font-weight: 800;
-text-transform: uppercase;
-}
-figure.snip1311 p {
-font-size: 0.8em;
-font-weight: 500;
-margin: 0 0 15px;
-}
-figure.snip1311 .read-more {
-border: 2px solid #ffffff;
-padding: 0.5em 1em;
-font-size: 0.8em;
-text-decoration: none;
-color: #ffffff;
-display: inline-block;
-}
-figure.snip1311 .read-more:hover {
-background-color: #ffffff;
-color: #000000;
-}
-figure.snip1311 .read-more1 {
-  border: 2px solid #ffffff;
-  padding: 0.5em 1em;
-  font-size: 0.8em;
-  text-decoration: none;
+  font-family: 'Raleway', Arial, sans-serif;
+  position: relative;
+  margin: 10px;
+  width: 100%;
+  max-width: 360px;
+  background-color: #07090c;
   color: #ffffff;
+  border: 3px solid #555;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Image */
+figure.snip1311 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Figcaption styling (always visible) */
+figure.snip1311 figcaption {
+  padding: 20px;
+  background: #07090c;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+figure.snip1311 h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+figure.snip1311 p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* Read More Button */
+.read-more1 {
   display: inline-block;
-  background-color: #333;
+  padding: 8px 16px;
+  background: #0563bb;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   margin-top: 10px;
 }
-figure.snip1311 .read-more1:hover {
-background-color: #ffffff;
-color: #000000;
-}
-figure.snip1311:hover img,
-figure.snip1311.hover img {
--webkit-transform: rotateX(-180deg);
-transform: rotateX(-180deg);
-opacity: 0;
--webkit-transition-delay: 0;
-transition-delay: 0;
-}
-figure.snip1311:hover figcaption,
-figure.snip1311.hover figcaption {
--webkit-transform: rotateX(0deg) translate(0, -50%);
-transform: rotateX(0deg) translate(0, -50%);
-opacity: 1;
--webkit-transition-delay: 0.35s;
-transition-delay: 0.35s;
-}
-.hidden{
-display:none;
-}
-.read-more{
-cursor:pointer;
-}
+
+
+
 
 
 /*--------------------------------------------------------------
@@ -1563,41 +1503,123 @@ cursor:pointer;
 /*--------------------------------------------------------------
 # Project Section Details
 --------------------------------------------------------------*/
-.underline {
-  --line: #646B8C;
-  --color: #2B3044;
-  text-decoration: none;
-  color: var(--color);
+/* Projects Container */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Project Figure */
+figure.snip1311 {
+  font-family: 'Raleway', Arial, sans-serif;
   position: relative;
-  width: 140px;
-  margin: 16px 0;
+  margin: 10px;
+  width: 100%;
+  max-width: 360px;
+  background-color: #07090c;
+  color: #ffffff;
+  border: 3px solid #555;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
-proj {
-  color: lightblue;
+/* Responsive Image */
+figure.snip1311 img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
-.underline span {
-  background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  background-size: var(--background-size, 100%) 1px;
-  transition: background-size 0.2s linear var(--background-delay, 0.15s);
+/* Figcaption styling */
+figure.snip1311 figcaption {
+  padding: 20px;
+  background: #07090c;
+  color: #ffffff;
+  flex-grow: 1;
+}
+
+figure.snip1311 h3 {
+  margin-top: 0;
+  font-size: 22px;
+}
+
+figure.snip1311 p.summary {
   font-size: 16px;
-  line-height: 20px;
-  transform: translateZ(0);
+  line-height: 1.5;
+  margin: 10px 0;
 }
 
-.underline spanS {
-  background-image: linear-gradient(0deg, var(--line) 0%, var(--line) 100%);
-  background-position: 100% 100%;
-  background-repeat: no-repeat;
-  background-size: var(--background-size, 100%) 1px;
-  transition: background-size 0.2s linear var(--background-delay, 0.15s);
-  font-size: 14px;
-  line-height: 19px;
-  transform: translateZ(0);
+/* Read More Button */
+figure.snip1311 figcaption .read-more {
+  background: #0563bb;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
 }
+
+figure.snip1311 figcaption .read-more:hover {
+  background: #034a85;
+}
+
+/* Modal Popup Styles */
+.project-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.project-modal.open {
+  display: block;
+}
+
+.project-modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.project-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+#project-modal-inner img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+#project-modal-inner p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
 
 /*--------------------------------------------------------------
 # Button Styles
