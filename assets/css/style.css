@@ -1588,7 +1588,7 @@ figure.snip1311 figcaption .read-more:hover {
 
 .project-modal-content {
   background-color: #fff;
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 20px;
   width: 80%;
   max-width: 800px;
@@ -1607,7 +1607,7 @@ figure.snip1311 figcaption .read-more:hover {
   cursor: pointer;
 }
 
-#project-modal-inner img {
+#project-modal-inner model-viewer {
   width: 100%;
   height: auto;
   margin-bottom: 15px;
@@ -2009,3 +2009,6 @@ figure.snip1311 figcaption .read-more:hover {
 {
 box-sizing: border-box;
 }
+
+
+

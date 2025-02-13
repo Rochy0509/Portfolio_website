@@ -432,7 +432,6 @@
 
 
  <!-- ======= Projects Section ======= -->
-<!-- ======= Projects Section ======= -->
 <section id="project">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
@@ -442,7 +441,7 @@
     <div class="project-container">
       <!-- Project 1: 3D Printed Robotic Arm -->
       <figure class="snip1311">
-        <img src="assets/img/projects/project 1.jpg" alt="3D Printed Robotic Arm" />
+        <img src="assets\img\projects\project 1.jpg" alt="3D Printed Robotic Arm" />
         <figcaption>
           <h3>3D Printed Robotic Arm</h3>
           <p class="summary">
@@ -451,18 +450,17 @@
             This project involved implementing ROS packages to control STM32 boards alongside a basic computer vision system.
           </p>
           <button class="read-more">Read More</button>
-          <!-- Extra content for modal (hidden by default) -->
+          <!-- Extra content for modal (without a 3D model) -->
           <div class="modal-details" style="display: none;">
-            <img src="assets/img/projects/project1-extra.jpg" alt="Extra view of the Robotic Arm" />
             <p>
-              Additional details: This project also tackled design challenges such as precise motion control and weight balancing.
-              Advanced 3D printing techniques and innovative materials were key to the success of this prototype.
+              Additional details: This project also addressed challenges like weight distribution and precise motion control,
+              using advanced 3D printing techniques and innovative materials to create a functional prototype.
             </p>
           </div>
         </figcaption>
       </figure>
 
-      <!-- Project 2: Ontario Tech Robotics -->
+      <!-- Project 2: Ontario Tech Robotics with 3D Model -->
       <figure class="snip1311">
         <img src="assets/img/projects/project 2.jpg" alt="Ontario Tech Robotics" />
         <figcaption>
@@ -471,30 +469,50 @@
             During my time with Ontario Tech Robotics, I oversaw the mechanical design of various projects.
             Starting as a junior lead and later being promoted to team leader, I gained invaluable experience implementing ROS packages.
           </p>
-          <button class="read-more">Read More</button>
+          <button class="read-more modal-read-more">Read More</button>
+          <!-- Modal extra content for OTU Robotics with model-viewer -->
           <div class="modal-details" style="display: none;">
-            <img src="assets/img/projects/project2-extra.jpg" alt="Extra view of Ontario Tech Robotics" />
+            <model-viewer style="height: 400px;" 
+                          src="assets/img/projects/jarvis.glb" 
+                          ar 
+                          ar-modes="webxr scene-viewer quick-look" 
+                          camera-controls 
+                          tone-mapping="neutral" 
+                          poster="assets/img/projects/poster.webp" 
+                          shadow-intensity="1">
+              <div class="progress-bar hide" slot="progress-bar">
+                <div class="update-bar"></div>
+              </div>
+              <button slot="ar-button" id="ar-button">
+                View in your space
+              </button>
+              <div id="ar-prompt">
+                <img src="assets/img/projects/ar_hand_prompt.png" alt="AR Prompt">
+              </div>
+            </model-viewer>
             <p>
               Additional details: This role sharpened my electronics and leadership skills through hands-on circuit integration and sensor implementation.
+              Use the 3D view above to explore the robot in your space.
             </p>
           </div>
         </figcaption>
       </figure>
 
+
       <!-- Project 3: Moduleaf Robotics Project -->
       <figure class="snip1311">
-        <img src="assets/img/projects/project 3.jpg" alt="Moduleaf Robotics Project" />
+        <img src="assets\img\projects\project 3.jpg" alt="Moduleaf Robotics Project" />
         <figcaption>
           <h3>Moduleaf Robotics Project</h3>
           <p class="summary">
             This project provided an opportunity to deepen my expertise with robotic arms.
-            I applied ROS packages for controlling the arms while contributing to mechanical design.
+            I applied ROS packages for controlling the arms while contributing to the mechanical design.
           </p>
           <button class="read-more">Read More</button>
           <div class="modal-details" style="display: none;">
-            <img src="assets/img/projects/project3-extra.jpg" alt="Extra view of Moduleaf Robotics" />
             <p>
-              Additional details: I also explored computer vision integration and learned about essential sensors (lidar, GPS, etc.) for autonomous mobile robots.
+              Additional details: I also explored computer vision integration and learned about essential sensors such as lidar and GPS for autonomous mobile robots.
+              This project expanded my technical knowledge and problem-solving skills.
             </p>
           </div>
         </figcaption>
@@ -511,9 +529,8 @@
           </p>
           <button class="read-more">Read More</button>
           <div class="modal-details" style="display: none;">
-            <img src="assets/img/projects/openpath-extra.jpg" alt="Extra view of OpenPath Technologies" />
             <p>
-              Additional details: The prototype uses a Jetson Nano, servo controllers, and DC motor controllers.
+              Additional details: The prototype was built using a Jetson Nano, servo controllers, DC motor controllers, and a camera.
               This project marks the beginning of our entrepreneurial journey towards a market-ready product.
             </p>
           </div>
@@ -530,6 +547,8 @@
     <div id="project-modal-inner"></div>
   </div>
 </div>
+
+
 
 
 <!-- ======= Testimonials Section ======= -->
@@ -615,6 +634,7 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
