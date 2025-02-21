@@ -1346,11 +1346,21 @@ proj{
 
 /* New Skills Grid Styles */
 .skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers all items */
   gap: 30px;
   margin-top: 30px;
-  margin-bottom: 30px; /* Added bottom margin to separate from the services row */
+  margin-bottom: 30px; /* Added bottom margin */
+}
+
+/* New class for centering the last row */
+.skills-bottom {
+  display: flex;
+  justify-content: center; /* Centers the bottom row */
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px; /* Space between rows */
 }
 
 .skills-grid .skill-item {
