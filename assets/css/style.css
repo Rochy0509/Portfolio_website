@@ -726,7 +726,7 @@ highlight{
   width: 98.6%;
 }
 @media all and (max-width: 500px) {
-.master div {
+  .master div {
     width: 99.9%;
   }
 }
@@ -747,7 +747,7 @@ highlight{
   display: table;
 }
 
-.skill-bars{
+.skill-bars {
   padding: 25px 30px;
   background: #fff;
   box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
@@ -755,20 +755,20 @@ highlight{
 }
 
 @media all and (max-width: 500px) {
-.skill-bars{
+  .skill-bars {
     margin-bottom: 15px;
   }
 }
-.skill-bars .bar{
+.skill-bars .bar {
   margin: 20px 0;
 }
-.skill-bars .bar:first-child{
+.skill-bars .bar:first-child {
   margin-top: 0px;
 }
-.skill-bars .bar .info{
+.skill-bars .bar .info {
   margin-bottom: 5px;
 }
-.skill-bars .bar .info span{
+.skill-bars .bar .info span {
   font-weight: 500;
   font-size: 17px;
   opacity: 0;
@@ -776,11 +776,11 @@ highlight{
 }
 
 @keyframes showText {
-  100%{
+  100% {
     opacity: 1;
   }
 }
-.skill-bars .bar .progress-line{
+.skill-bars .bar .progress-line {
   height: 10px;
   width: 100%;
   background: #f0f0f0;
@@ -792,12 +792,12 @@ highlight{
   animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 @keyframes animate {
-  100%{
+  100% {
     transform: scaleX(1);
   }
 }
 
-.bar .progress-line span{
+.bar .progress-line span {
   height: 100%;
   position: absolute;
   border-radius: 10px;
@@ -806,24 +806,38 @@ highlight{
   background: #0563bb;
 }
 
-.bar .progress-line span.animated{
-    animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+.bar .progress-line span.animated {
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
 }
 
-.bar .progress-line.html span{
-  width: 90%;
+/* Updated progress bar widths and labels for each project */
+.bar .progress-line.litter-detection span {
+  width: 100%; /* 100% for Autonomous Mobile Robot for Litter Detection */
 }
-.bar .progress-line.css span{
-  width: 72%;
+.bar .progress-line.ros-package span {
+  width: 100%; /* 100% for Moduleaf ROS Package Development */
 }
-.bar .progress-line.jquery span{
-  width: 91%;
+.bar .progress-line.robot-arm span {
+  width: 91%; /* 91% for Robotic Arm Control & Vision Integration */
 }
-.bar .progress-line.python span{
-  width: 83%;
+.bar .progress-line.workshops span {
+  width: 100%; /* 100% for Technical Workshops & Team Training */
+}
+.bar .progress-line.mechatronics span {
+  width: 72%; /* 72% for Advanced Mechatronics Design */
+}
+.bar .progress-line.algorithms span {
+  width: 40%; /* 40% for Optimizing Robotics Algorithms */
+}
+.bar .progress-line.sensor-fusion span {
+  width: 40%; /* 40% for Sensor Fusion & Data Processing */
+}
+.bar .progress-line.machine-learning span {
+  width: 55%; /* 55% for Machine Learning & Computer Vision */
 }
 
-.progress-line span.animated::before{
+/* Progress bar labels (percentages) */
+.progress-line span.animated::before {
   position: absolute;
   content: "";
   top: -10px;
@@ -835,9 +849,9 @@ highlight{
   border-right-width: 0px;
   border-top-color: #000;
   opacity: 0;
-    animation: showText 0.5s 1.5s linear forwards;
+  animation: showText 0.5s 1.5s linear forwards;
 }
-.progress-line span.animated::after{
+.progress-line span.animated::after {
   position: absolute;
   top: -28px;
   right: 0;
@@ -851,19 +865,32 @@ highlight{
   animation: showText 0.5s 1.5s linear forwards;
 }
 
-.progress-line.html span::after{
-  content: "90%";
+.progress-line.litter-detection span::after {
+  content: "100%";
 }
-.progress-line.css span::after{
-  content: "72%";
+.progress-line.ros-package span::after {
+  content: "100%";
 }
-.progress-line.jquery span::after{
+.progress-line.robot-arm span::after {
   content: "91%";
 }
-.progress-line.python span::after{
-  content: "83%";
+.progress-line.workshops span::after {
+  content: "100%";
+}
+.progress-line.mechatronics span::after {
+  content: "72%";
+}
+.progress-line.algorithms span::after {
+  content: "40%";
+}
+.progress-line.sensor-fusion span::after {
+  content: "40%";
+}
+.progress-line.machine-learning span::after {
+  content: "55%";
 }
 
+/* Remove or correct the 'line' references (they seem to be typos or redundant) */
 .skill-bars .bar .info line {
   font-weight: 500;
   font-size: 17px;
@@ -879,32 +906,18 @@ highlight{
   transform-origin: left;
   background: #0563bb;
 }
-.bar .progress-line line.animated{
+.bar .progress-line line.animated {
   animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
-
 }
 
-.bar .progress-line.html line {
-  width: 90%;
-}
+/* Remove or correct these as they are redundant or incorrect with the new structure */
+.bar .progress-line.html line { width: 90%; }
+.bar .progress-line.css line { width: 90%; }
+.bar .progress-line.jquery line { width: 90%; }
+.bar .progress-line.python line { width: 90%; }
+.bar .progress-line.mysql line { width: 92%; }
 
-.bar .progress-line.css line {
-  width: 90%;
-}
-
-.bar .progress-line.jquery line {
-  width: 90%;
-}
-
-.bar .progress-line.python line {
-  width: 90%;
-}
-
-.bar .progress-line.mysql line {
-  width: 92%;
-}
-
-.progress-line line.animated::before {
+.progress-line line.animated::before { /* Remove or correct this */
   position: absolute;
   content: "";
   top: -10px;
@@ -919,7 +932,7 @@ highlight{
   animation: showText 0.5s 1.5s linear forwards;
 }
 
-.progress-line line.animated::after {
+.progress-line line.animated::after { /* Remove or correct this */
   position: absolute;
   top: -28px;
   right: 0;
@@ -933,22 +946,10 @@ highlight{
   animation: showText 0.5s 1.5s linear forwards;
 }
 
-.progress-line.css line::after {
-  content: "90%";
-}
-
-.progress-line.jquery line::after {
-  content: "90%";
-}
-
-.progress-line.python line::after {
-  content: "90%";
-}
-
-.progress-line.mysql line::after {
-  content: "92%";
-}
-
+.progress-line.css line::after { content: "90%"; }
+.progress-line.jquery line::after { content: "90%"; }
+.progress-line.python line::after { content: "90%"; }
+.progress-line.mysql line::after { content: "92%"; }
 
 
 /*--------------------------------------------------------------
@@ -1207,19 +1208,21 @@ proj{
 /*--------------------------------------------------------------
 # Skills Page
 --------------------------------------------------------------*/
+
 .services .icon-box {
   border-radius: 18px !important;
   text-align: center;
-  padding: 70px 20px 80px 20px;
+  padding: 15px 10px; /* Reduced padding for mobile */
   transition: all ease-in-out 0.3s;
   background: #fff;
-  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+  box-shadow: 0px 3px 10px 0px rgba(110, 123, 131, 0.05); /* Softer shadow for mobile */
+  overflow: hidden; /* Prevents content overflow */
 }
 
 .services .icon-box .icon {
   margin: 0 auto;
-  width: 100px;
-  height: 100px;
+  width: 80px; /* Reduced size for mobile */
+  height: 80px; /* Reduced size for mobile */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1228,7 +1231,7 @@ proj{
 }
 
 .services .icon-box .icon i {
-  font-size: 36px;
+  font-size: 28px; /* Smaller font size for mobile */
   transition: 0.5s;
   position: relative;
 }
@@ -1237,6 +1240,8 @@ proj{
   position: absolute;
   top: 0;
   left: 0;
+  width: 80px; /* Match container size */
+  height: 80px; /* Match container size */
 }
 
 .services .icon-box .icon svg path {
@@ -1246,8 +1251,8 @@ proj{
 
 .services .icon-box h4 {
   font-weight: 600;
-  margin: 10px 0 15px 0;
-  font-size: 22px;
+  margin: 10px 0 10px 0; /* Reduced margin for mobile */
+  font-size: 18px; /* Smaller font for mobile */
 }
 
 .services .icon-box h4 a {
@@ -1256,12 +1261,12 @@ proj{
 }
 
 .services .icon-box p {
-  line-height: 24px;
+  line-height: 20px; /* Reduced line height for mobile */
   font-size: 14px;
   margin-bottom: 0;
 }
 
-@media (min-width:280px) and (max-width:1025px) {
+@media (min-width: 280px) and (max-width: 1025px) {
   .services .icon-box p {
     font-size: 16px;
   }
@@ -1285,7 +1290,7 @@ proj{
 }
 
 .services .iconbox-orange i {
-  color:rgb(92, 19, 160);
+  color: rgb(92, 19, 160);
 }
 
 .services .iconbox-orange:hover .icon i {
@@ -1348,38 +1353,95 @@ proj{
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers all items */
-  gap: 30px;
-  margin-top: 30px;
-  margin-bottom: 30px; /* Added bottom margin */
+  justify-content: center;
+  gap: 15px; /* Reduced gap for mobile */
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-/* New class for centering the last row */
 .skills-bottom {
   display: flex;
-  justify-content: center; /* Centers the bottom row */
-  gap: 30px;
+  justify-content: center;
+  gap: 15px; /* Reduced gap for mobile */
   width: 100%;
-  margin-top: 20px; /* Space between rows */
+  margin-top: 15px;
 }
 
 .skills-grid .skill-item {
+  flex: 1 1 100px; /* Allows items to shrink/grow but start at 100px on mobile */
   text-align: center;
-  padding: 20px;
+  padding: 15px; /* Reduced padding for mobile */
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* Softer shadow for mobile */
 }
 
 .skills-grid .skill-item img {
-  height: 64px;
+  height: 48px; /* Smaller height for mobile */
   margin-bottom: 10px;
+  max-width: 100%; /* Ensures the image doesn’t exceed its container */
 }
 
 .skills-grid .skill-item p {
-  font-size: 20px;
+  font-size: 16px; /* Smaller font for mobile */
   margin: 0;
   font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 768px) {
+  .services .icon-box {
+    padding: 70px 20px 80px 20px; /* Original padding for desktop */
+    box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+  }
+
+  .services .icon-box .icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .services .icon-box .icon i {
+    font-size: 36px;
+  }
+
+  .services .icon-box .icon sv {
+    width: 100px;
+    height: 100px;
+  }
+
+  .services .icon-box h4 {
+    font-size: 22px;
+    margin: 10px 0 15px 0;
+  }
+
+  .services .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+  }
+
+  .skills-grid {
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .skills-bottom {
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .skills-grid .skill-item {
+    flex: 1 1 150px; /* Larger width for tablets/desktops */
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .skills-grid .skill-item img {
+    height: 64px;
+  }
+
+  .skills-grid .skill-item p {
+    font-size: 20px;
+  }
 }
 
 
