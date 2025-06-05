@@ -38,6 +38,7 @@
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Skills</span></a></li>
         <li><a href="#project" class="nav-link scrollto"><i class="bx bx-collection"></i> <span>Projects</span></a></li>
+        <li><a href="blog/index.html" target="_blank" class="nav-link"><i class="bx bx-book"></i> <span>Blog</span></a></li>
         <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-message"></i> <span>References</span></a></li>
       </ul>
     </nav><!-- .nav-menu -->
@@ -475,14 +476,7 @@
             It mimics human arm motion for precise, versatile tasks.
             I am now enhancing it with ROS2 and robust compliant controls like impedance and gravity compensation for improved adaptability and safety.
           </p>
-          <button class="read-more">Read More</button>
-          <!-- Extra content for modal (without a 3D model) -->
-          <div class="modal-details" style="display: none;">
-            <p>
-              Additional details: This project also addressed challenges like weight distribution and precise motion control,
-              using advanced 3D printing techniques and innovative materials to create a functional prototype.
-            </p>
-          </div>
+          <a class="read-more" href="blog/project1.html" target="_blank">Read More</a>
         </figcaption>
       </figure>
 
@@ -495,32 +489,7 @@
             During my time with Ontario Tech Robotics, I oversaw the mechanical design of robomaster projects.
             Starting as a junior lead and later being promoted to team leader, I gained invaluable experience implementing ROS packages.
           </p>
-          <button class="read-more modal-read-more">Read More</button>
-          <!-- Modal extra content for OTU Robotics with model-viewer -->
-          <div class="modal-details" style="display: none;">
-            <model-viewer style="height: 400px;" 
-                          src="assets/img/projects/jarvis.glb" 
-                          ar 
-                          ar-modes="webxr scene-viewer quick-look" 
-                          camera-controls 
-                          tone-mapping="neutral" 
-                          poster="assets/img/projects/poster.webp" 
-                          shadow-intensity="1">
-              <div class="progress-bar hide" slot="progress-bar">
-                <div class="update-bar"></div>
-              </div>
-              <button slot="ar-button" id="ar-button">
-                View in your space
-              </button>
-              <div id="ar-prompt">
-                <img src="assets/img/projects/ar_hand_prompt.png" alt="AR Prompt">
-              </div>
-            </model-viewer>
-            <p>
-              Additional details: This role sharpened my mechanical, electronics and leadership skills through hands-on.
-              Use the 3D view above to explore the robot in your space.
-            </p>
-          </div>
+            <a class="read-more" href="blog/project2.html" target="_blank">Read More</a>
         </figcaption>
       </figure>
 
@@ -534,13 +503,7 @@
             This project provided an opportunity to deepen my expertise with robotic arms.
             I applied ROS2 packages for controlling the arms while contributing to the mechanical design.
           </p>
-          <button class="read-more">Read More</button>
-          <div class="modal-details" style="display: none;">
-            <p>
-              Additional details: I also explored computer vision integration and learned about essential sensors such as lidar and GPS for autonomous mobile robots.
-              This project expanded my technical knowledge and problem-solving skills.
-            </p>
-          </div>
+            <a class="read-more" href="blog/project3.html" target="_blank">Read More</a>
         </figcaption>
       </figure>
 
@@ -553,26 +516,12 @@
             A personal project where my team and I secured third place in the Brilliant Catalyst Innovation Challenge Winter 2024.
             We developed a mobile robot capable of autonomously navigating streets, identifying litter, and cleaning it.
           </p>
-          <button class="read-more">Read More</button>
-          <div class="modal-details" style="display: none;">
-            <p>
-              Additional details: The prototype was built using a Jetson Nano, servo controllers, DC motor controllers, and a camera.
-              This project marks the beginning of our entrepreneurial journey towards a market-ready product.
-            </p>
-          </div>
+            <a class="read-more" href="blog/project4.html" target="_blank">Read More</a>
         </figcaption>
       </figure>
     </div>
   </div>
 </section>
-
-<!-- Modal Popup (hidden by default) -->
-<div id="projectModal" class="project-modal">
-  <div class="project-modal-content">
-    <span class="project-modal-close">&times;</span>
-    <div id="project-modal-inner"></div>
-  </div>
-</div>
 
 
 
