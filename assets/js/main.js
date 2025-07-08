@@ -643,6 +643,74 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 });
 
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the modal elements
+  const modal = document.getElementById("projectModal");
+  const modalInner = document.getElementById("project-modal-inner");
+  const modalClose = document.querySelector(".project-modal-close");
+
+  // Debug log to verify modal elements exist
+  console.log("Modal:", modal);
+  console.log("Modal Inner:", modalInner);
+  console.log("Modal Close:", modalClose);
+
+  // Check if the modal elements exist
+  if (!modal) {
+    console.error("Modal element (#projectModal) not found in the DOM.");
+    return;
+  }
+  if (!modalInner) {
+    console.error("Modal inner element (#project-modal-inner) not found in the DOM.");
+    return;
+  }
+  if (!modalClose) {
+    console.error("Modal close button (.project-modal-close) not found in the DOM.");
+  }
+
+  // Attach event listeners to each "Read More" button
+  const readMoreButtons = document.querySelectorAll("figure.snip1311 .read-more");
+  if (readMoreButtons.length === 0) {
+    console.warn("No 'Read More' buttons found in the project figures.");
+  }
+  readMoreButtons.forEach((button, idx) => {
+    if (!button) {
+      console.warn(`Button at index ${idx} is undefined.`);
+      return;
+    }
+    button.addEventListener("click", function() {
+      // Find the parent figure element
+      const figure = button.closest("figure.snip1311");
+      if (!figure) {
+        console.error("Could not find the parent figure for a read-more button.");
+        return;
+      }
+      // Get the extra content from the figure
+      const extraContent = figure.querySelector(".modal-details");
+      if (extraContent) {
+        // Insert the extra content into the modal
+        modalInner.innerHTML = extraContent.innerHTML;
+        // Add the "open" class to the modal
+        modal.classList.add("open");
+      } else {
+        console.warn("No extra content found for this project.");
+      }
+    });
+  });
+
+  // Attach event listener to the close button if it exists
+  if (modalClose) {
+    modalClose.addEventListener("click", function() {
+      modal.classList.remove("open");
+    });
+  }
+
+  // Close the modal when clicking outside the content area
+  window.addEventListener("click", function(e) {
+    if (e.target === modal) {
+      modal.classList.remove("open");
+    }
+  });
+});
 
 
 
