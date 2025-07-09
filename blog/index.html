@@ -7,6 +7,7 @@
   <title>Kenneth Martinez Blog - Robotics, Engineering & Technology Insights</title>
   <meta name="description" content="Explore Kenneth Martinez's blog featuring insights on robotics, mechatronics engineering, automation, ROS, and cutting-edge technology developments.">
   <meta name="keywords" content="Kenneth Martinez Blog, Robotics Blog, Mechatronics Engineering, ROS Tutorial, Automation Technology, Engineering Projects, Robotics Programming, Ontario Tech University">
+  <meta name="google-adsense-account" content="ca-pub-3872843956246000">
   
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
@@ -307,6 +308,16 @@
   <script>
     // Blog posts data - Add your posts here
     const blogPosts = [
+      {
+        title: "Robotics Careers: What Skills Employers Really Want",
+        excerpt: "Discover the technical and soft skills employers seek in robotics careers. Complete guide with free learning resources for programming, electronics, ROS2, AI, and more.",
+        image: "images/Robotics-career.png",
+        category: "Career",
+        date: "July 9, 2025",
+        readTime: "10 min read",
+        url: "posts/robotics-careers-skills-employers-want.html",
+        featured: true
+      },
       // Example post structure:
       // {
       //   title: "Getting Started with ROS2 for Robotics",
@@ -333,16 +344,16 @@
         const postElement = document.createElement('article');
         postElement.className = 'blog-card';
         postElement.innerHTML = `
-          <img src="${post.image}" alt="${post.title}" loading="lazy">
+          <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='../assets/img/blog/default-thumbnail.svg'">
           <div class="blog-card-content">
             <div class="blog-meta">
               <span class="blog-category">${post.category}</span>
               <span><i class="bi bi-calendar3"></i> ${formatDate(post.date)}</span>
               <span><i class="bi bi-clock"></i> ${post.readTime}</span>
             </div>
-            <h3><a href="posts/${post.slug}.html">${post.title}</a></h3>
+            <h3><a href="${post.url}">${post.title}</a></h3>
             <p class="blog-excerpt">${post.excerpt}</p>
-            <a href="posts/${post.slug}.html" class="read-more-btn">
+            <a href="${post.url}" class="read-more-btn">
               Read More <i class="bi bi-arrow-right"></i>
             </a>
           </div>

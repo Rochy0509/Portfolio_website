@@ -1,0 +1,99 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="250" fill="url(#grad1)"/>
+  
+  <!-- Gradient Definition -->
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Robot Icon -->
+  <g transform="translate(150, 50)">
+    <!-- Robot Head -->
+    <rect x="20" y="20" width="60" height="50" rx="10" fill="#fff" opacity="0.9"/>
+    <!-- Eyes -->
+    <circle cx="35" cy="35" r="4" fill="#667eea"/>
+    <circle cx="65" cy="35" r="4" fill="#667eea"/>
+    <!-- Mouth -->
+    <rect x="40" y="50" width="20" height="3" rx="1" fill="#667eea"/>
+    
+    <!-- Robot Body -->
+    <rect x="15" y="80" width="70" height="80" rx="8" fill="#fff" opacity="0.8"/>
+    <!-- Chest Panel -->
+    <rect x="25" y="90" width="50" height="30" rx="5" fill="#667eea" opacity="0.3"/>
+    <!-- Buttons -->
+    <circle cx="35" cy="135" r="3" fill="#667eea"/>
+    <circle cx="50" cy="135" r="3" fill="#667eea"/>
+    <circle cx="65" cy="135" r="3" fill="#667eea"/>
+    
+    <!-- Arms -->
+    <rect x="5" y="85" width="8" height="40" rx="4" fill="#fff" opacity="0.8"/>
+    <rect x="87" y="85" width="8" height="40" rx="4" fill="#fff" opacity="0.8"/>
+    
+    <!-- Antenna -->
+    <line x1="50" y1="20" x2="50" y2="10" stroke="#fff" stroke-width="2"/>
+    <circle cx="50" cy="8" r="3" fill="#fff"/>
+  </g>
+  
+  <!-- Title Text -->
+  <text x="200" y="80" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff" text-anchor="middle">
+    Robotics Careers
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="200" y="105" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" opacity="0.9">
+    Skills Employers Want
+  </text>
+  
+  <!-- Skill Icons -->
+  <g transform="translate(50, 180)">
+    <!-- Programming -->
+    <rect x="0" y="0" width="25" height="20" rx="3" fill="#fff" opacity="0.8"/>
+    <text x="12" y="12" font-family="monospace" font-size="8" fill="#667eea" text-anchor="middle">&lt;/&gt;</text>
+    
+    <!-- Gear -->
+    <g transform="translate(50, 0)">
+      <circle cx="12" cy="10" r="8" fill="none" stroke="#fff" stroke-width="2" opacity="0.8"/>
+      <circle cx="12" cy="10" r="3" fill="#fff" opacity="0.8"/>
+    </g>
+    
+    <!-- AI Brain -->
+    <g transform="translate(100, 0)">
+      <path d="M5 15 Q5 5 15 5 Q25 5 25 15 Q25 20 20 20 L10 20 Q5 20 5 15" fill="#fff" opacity="0.8"/>
+      <circle cx="12" cy="12" r="2" fill="#667eea"/>
+      <circle cx="18" cy="12" r="2" fill="#667eea"/>
+    </g>
+    
+    <!-- Circuit -->
+    <g transform="translate(150, 5)">
+      <rect x="0" y="0" width="20" height="15" rx="2" fill="#fff" opacity="0.8"/>
+      <line x1="3" y1="5" x2="17" y2="5" stroke="#667eea" stroke-width="1"/>
+      <line x1="3" y1="10" x2="17" y2="10" stroke="#667eea" stroke-width="1"/>
+      <circle cx="6" cy="5" r="1" fill="#667eea"/>
+      <circle cx="14" cy="10" r="1" fill="#667eea"/>
+    </g>
+    
+    <!-- Math -->
+    <g transform="translate(200, 0)">
+      <rect x="0" y="0" width="20" height="15" rx="2" fill="#fff" opacity="0.8"/>
+      <text x="10" y="10" font-family="serif" font-size="10" fill="#667eea" text-anchor="middle">∑</text>
+    </g>
+    
+    <!-- Team -->
+    <g transform="translate(250, 0)">
+      <circle cx="6" cy="6" r="3" fill="#fff" opacity="0.8"/>
+      <circle cx="14" cy="6" r="3" fill="#fff" opacity="0.8"/>
+      <path d="M2 15 Q2 12 6 12 Q10 12 10 15" fill="#fff" opacity="0.8"/>
+      <path d="M10 15 Q10 12 14 12 Q18 12 18 15" fill="#fff" opacity="0.8"/>
+    </g>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <circle cx="50" cy="50" r="3" fill="#fff" opacity="0.3"/>
+  <circle cx="350" cy="70" r="4" fill="#fff" opacity="0.3"/>
+  <circle cx="370" cy="200" r="2" fill="#fff" opacity="0.3"/>
+  <circle cx="30" cy="200" r="2" fill="#fff" opacity="0.3"/>
+</svg>
