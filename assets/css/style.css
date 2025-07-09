@@ -1321,6 +1321,112 @@ proj{
   font-family: "Montserrat", sans-serif;
 }
 
+/* Mobile responsive styles for skills section */
+@media (max-width: 768px) {
+  .skills-grid {
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+  }
+  
+  .skills-bottom {
+    gap: 20px;
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+  
+  .skills-grid .skill-item {
+    padding: 15px;
+    flex: 1;
+    min-width: 120px;
+    max-width: 150px;
+  }
+  
+  .skills-grid .skill-item img {
+    height: 48px;
+    margin-bottom: 8px;
+  }
+  
+  .skills-grid .skill-item p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    gap: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 0 5px;
+  }
+  
+  .skills-bottom {
+    gap: 15px;
+    margin-top: 10px;
+    padding: 0 5px;
+  }
+  
+  .skills-grid .skill-item {
+    padding: 10px;
+    min-width: 100px;
+    max-width: 120px;
+  }
+  
+  .skills-grid .skill-item img {
+    height: 40px;
+    margin-bottom: 6px;
+  }
+  
+  .skills-grid .skill-item p {
+    font-size: 14px;
+  }
+}
+
+/* Google Translate Styling */
+.translate-item {
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+#google_translate_element {
+  width: 100%;
+}
+
+#google_translate_element .goog-te-gadget {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+#google_translate_element .goog-te-gadget-simple {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#google_translate_element .goog-te-gadget-simple:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+.goog-te-menu-frame {
+  z-index: 9999 !important;
+}
+
+body {
+  top: 0px !important;
+}
+
 
 
 
