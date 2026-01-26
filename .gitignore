@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# AI / Temporary files
+*.ai.md
+*.mockup.png
+*.log
+tmp/
+.gemini/
+.antigravity/
+
+# Build
+dist/
+build/
+
+.claude/
