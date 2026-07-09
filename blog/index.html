@@ -26,7 +26,7 @@
     @keyframes drift1{0%{transform:translate(0,0)}50%{transform:translate(7vw,5vh)}100%{transform:translate(0,0)}}
     @keyframes drift2{0%{transform:translate(0,0)}50%{transform:translate(-6vw,-4vh)}100%{transform:translate(0,0)}}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    @media (max-width: 640px) {
+@media (max-width: 640px) {
       /* Blog posts: single column */
       section#posts > div:last-child {
         grid-template-columns: 1fr !important;
@@ -41,69 +41,12 @@
       header#top > div {
         max-width: 100% !important;
       }
-      /* Nav: hamburger menu on mobile */
+      /* Nav: responsive wrap on mobile */
       .nav-menu {
-        display: flex !important;
-        align-items: center;
-        gap: clamp(12px,2.2vw,26px);
-      }
-      .nav-hamburger { display: none; }
-      .nav-mobile-panel { display: none; }
-      
-      @media (max-width: 768px) {
-        .nav-menu > a:not(:last-child) { display: none; }
-        .nav-hamburger { 
-          display: flex !important; 
-          flex-direction: column; 
-          gap: 5px; 
-          background: none; 
-          border: none; 
-          cursor: pointer; 
-          padding: 8px; 
-          z-index: 100;
-        }
-        .nav-hamburger span { 
-          width: 24px; 
-          height: 2px; 
-          background: #efe6d8; 
-          display: block; 
-          transition: transform .3s, opacity .3s; 
-        }
-        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
-        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
-        .nav-mobile-panel {
-          display: flex !important;
-          position: fixed;
-          top: 0;
-          right: -100%;
-          width: 75vw;
-          max-width: 280px;
-          height: 100vh;
-          background: rgba(23,18,12,.98);
-          backdrop-filter: blur(12px);
-          border-left: 1px solid rgba(255,255,255,.07);
-          padding: 80px 24px 24px;
-          z-index: 99;
-          transition: right .3s ease;
-          flex-direction: column;
-          gap: 20px;
-        }
-        .nav-mobile-panel.open { right: 0; }
-        .nav-mobile-panel a { 
-          color: #b6a88f; 
-          font-size: 16px; 
-          padding: 12px 0; 
-          border-bottom: 1px solid rgba(255,255,255,.05); 
-        }
-        .nav-mobile-panel a:last-child { 
-          color: #f5893a; 
-          border: 1px solid #f5893a; 
-          border-radius: 999px; 
-          text-align: center; 
-          padding: 12px 24px; 
-          margin-top: 8px; 
-        }
+        gap: clamp(8px, 2vw, 16px) !important;
+        font-size: clamp(11px, 2vw, 12px) !important;
+        flex-wrap: wrap;
+        justify-content: flex-end;
       }
       /* Contact footer: stack buttons */
       footer#contact > div > div:first-child > div:last-child {
@@ -141,28 +84,14 @@
         <a href="../index.html" style="font-weight:700;letter-spacing:1px;font-size:15px;display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace">
           <span style="width:9px;height:9px;background:#f5893a;display:inline-block;border-radius:50%;box-shadow:0 0 10px rgba(245,137,58,.9)"></span>KM<span style="color:#f5893a;animation:blink 1.2s step-end infinite">_</span>
         </a>
-        <div class="nav-menu" style="display:flex;align-items:center;gap:clamp(12px,2.2vw,26px);font-size:12.5px;letter-spacing:.5px">
+        <nav class="nav-menu" style="display:flex;align-items:center;gap:clamp(8px,1.5vw,20px);font-size:clamp(11px,2vw,12.5px);letter-spacing:.5px;flex-wrap:wrap">
           <a href="../index.html#about" style="color:#b6a88f">about</a>
           <a href="../index.html#skills" style="color:#b6a88f">skills</a>
           <a href="../index.html#experience" style="color:#b6a88f">experience</a>
           <a href="../index.html#work" style="color:#b6a88f">work</a>
           <a href="index.html" style="color:#f5893a">blog</a>
-          <a href="mailto:kenetd98@gmail.com" style="padding:8px 16px;border:1px solid #f5893a;color:#f5893a;border-radius:999px;transition:background .2s,color .2s" style-hover="background:#f5893a;color:#17120c">contact</a>
-        </div>
-        <button class="nav-hamburger" aria-label="Toggle menu" style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:100" onclick="toggleMobileMenu()">
-          <span style="width:24px;height:2px;background:#efe6d8;display:block;transition:transform .3s,opacity .3s"></span>
-          <span style="width:24px;height:2px;background:#efe6d8;display:block;transition:transform .3s,opacity .3s"></span>
-          <span style="width:24px;height:2px;background:#efe6d8;display:block;transition:transform .3s,opacity .3s"></span>
-        </button>
-      </nav>
-      <div class="nav-mobile-panel" style="display:none;position:fixed;top:0;right:-100%;width:75vw;max-width:280px;height:100vh;background:rgba(23,18,12,.98);backdrop-filter:blur(12px);border-left:1px solid rgba(255,255,255,.07);padding:80px 24px 24px;z-index:99;transition:right .3s ease;flex-direction:column;gap:20px" onclick="toggleMobileMenu()">
-        <a href="../index.html#about" onclick="event.stopPropagation();toggleMobileMenu()" style="color:#b6a88f;font-size:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)">about</a>
-        <a href="../index.html#skills" onclick="event.stopPropagation();toggleMobileMenu()" style="color:#b6a88f;font-size:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)">skills</a>
-        <a href="../index.html#experience" onclick="event.stopPropagation();toggleMobileMenu()" style="color:#b6a88f;font-size:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)">experience</a>
-        <a href="../index.html#work" onclick="event.stopPropagation();toggleMobileMenu()" style="color:#b6a88f;font-size:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)">work</a>
-        <a href="index.html" onclick="event.stopPropagation();toggleMobileMenu()" style="color:#f5893a;font-size:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05)">blog</a>
-        <a href="mailto:kenetd98@gmail.com" onclick="toggleMobileMenu()" style="color:#f5893a;border:1px solid #f5893a;border-radius:999px;text-align:center;padding:12px 24px;margin-top:8px">contact</a>
-      </div>
+          <a href="mailto:kenetd98@gmail.com" style="padding:6px 14px;border:1px solid #f5893a;color:#f5893a;border-radius:999px;transition:background .2s,color .2s;white-space:nowrap" style-hover="background:#f5893a;color:#17120c">contact</a>
+        </nav>
 
       <!-- HERO -->
       <header id="top" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(20px,5vw,64px) clamp(40px,6vw,72px)">
@@ -313,33 +242,8 @@
         ticker: this.state.ticker,
         posts: this.state.posts,
       };
-    }
+}
   }
-  </script>
-  <script>
-    // Mobile nav toggle for hamburger + slide panel
-    function toggleMobileMenu() {
-      const btn = document.querySelector('.nav-hamburger');
-      const panel = document.querySelector('.nav-mobile-panel');
-      const isOpen = panel.classList.toggle('open');
-      btn.classList.toggle('active');
-      panel.style.right = isOpen ? '0' : '-100%';
-    }
-    // Close on escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        const panel = document.querySelector('.nav-mobile-panel');
-        if (panel.classList.contains('open')) toggleMobileMenu();
-      }
-    });
-    // Ensure panel is closed on resize > 768
-    window.addEventListener('resize', function() {
-      if (window.innerWidth > 768) {
-        document.querySelector('.nav-mobile-panel').classList.remove('open');
-        document.querySelector('.nav-hamburger').classList.remove('active');
-        document.querySelector('.nav-mobile-panel').style.right = '-100%';
-      }
-    });
   </script>
 </body>
 </html>
