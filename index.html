@@ -25,6 +25,100 @@
     @keyframes drift1{0%{transform:translate(0,0)}50%{transform:translate(7vw,5vh)}100%{transform:translate(0,0)}}
     @keyframes drift2{0%{transform:translate(0,0)}50%{transform:translate(-6vw,-4vh)}100%{transform:translate(0,0)}}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      /* Hero: stack columns, center image, remove rotation */
+      header#top > div:first-child {
+        display: block !important;
+      }
+      header#top > div:first-child > div:first-child {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      header#top > div:first-child > div:last-child {
+        transform: none !important;
+        justify-self: center;
+        margin-top: clamp(32px, 8vw, 48px);
+      }
+      header#top > div:first-child > div:last-child > div:first-child {
+        width: min(280px, 80vw) !important;
+        aspect-ratio: 4/5;
+      }
+      header#top > div:first-child > div:last-child > div:last-child {
+        top: -12px !important;
+        right: -12px !important;
+        transform: none !important;
+      }
+      /* Stats: single column on mobile */
+      header#top > div:last-child {
+        flex-direction: column;
+      }
+      header#top > div:last-child > div {
+        width: 100%;
+      }
+      /* About: stack grid */
+      section#about > div {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+      }
+      section#about > div > div:first-child {
+        display: flex;
+        justify-content: center;
+      }
+      /* Skills: smaller min-width */
+      section#skills > div:last-child > div {
+        min-width: 100% !important;
+      }
+      /* Experience: reduce padding */
+      section#experience > div:last-child {
+        padding-left: 16px !important;
+      }
+      section#experience > div:last-child > div > span:first-child {
+        left: -20px !important;
+      }
+      /* Projects: single column */
+      section#work > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      /* ARHA: full width, no max-width constraint */
+      section#work > div:first-child > div:last-child > div:last-child {
+        max-width: none !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      section#work > div:first-child > div:last-child > div:last-child > div {
+        width: 100% !important;
+        max-width: 500px;
+      }
+      /* Testimonials: single column */
+      section#testimonials > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      /* Contact: stack buttons */
+      footer#contact > div > div:first-child > div:last-child {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      footer#contact > div > div:first-child > div:last-child > a {
+        justify-content: center;
+      }
+      /* Nav: smaller padding, hide some items or stack */
+      nav > div:last-child {
+        gap: 12px !important;
+        font-size: 11px !important;
+      }
+      nav > div:last-child > a:not(:last-child) {
+        display: none; /* hide secondary nav on mobile, keep contact */
+      }
+      nav > div:last-child > a:last-child {
+        padding: 6px 12px !important;
+        font-size: 11px !important;
+      }
+    }
   </style>
 </head>
 <body>

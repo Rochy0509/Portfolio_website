@@ -26,6 +26,42 @@
     @keyframes drift1{0%{transform:translate(0,0)}50%{transform:translate(7vw,5vh)}100%{transform:translate(0,0)}}
     @keyframes drift2{0%{transform:translate(0,0)}50%{transform:translate(-6vw,-4vh)}100%{transform:translate(0,0)}}
     @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @media (max-width: 640px) {
+      /* Blog posts: single column */
+      section#posts > div:last-child {
+        grid-template-columns: 1fr !important;
+      }
+      /* Hero: smaller padding */
+      header#top {
+        padding: clamp(32px,6vw,64px) clamp(16px,4vw,48px) clamp(24px,4vw,48px) !important;
+      }
+      header#top h1 {
+        font-size: clamp(36px,8vw,80px) !important;
+      }
+      header#top > div {
+        max-width: 100% !important;
+      }
+      /* Nav: compact */
+      nav > div:last-child {
+        gap: 10px !important;
+        font-size: 11px !important;
+      }
+      nav > div:last-child > a:not(:last-child) {
+        display: none;
+      }
+      nav > div:last-child > a:last-child {
+        padding: 6px 12px !important;
+        font-size: 11px !important;
+      }
+      /* Contact footer: stack buttons */
+      footer#contact > div > div:first-child > div:last-child {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      footer#contact > div > div:first-child > div:last-child > a {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
