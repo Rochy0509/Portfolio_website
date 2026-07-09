@@ -1,485 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kenneth Martinez | Robotics Engineer</title>
-  <meta
-    content="Kenneth Martinez is a Mechatronics Engineering student and Robotics Engineer specializing in ROS2, automation, and electrical systems."
-    name="description">
-
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <meta name="description" content="Mechatronics Engineer & Robotics Developer specializing in ROS2, autonomous systems, and humanoid robotics.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="support.js"></script>
+  
+  <style>
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#17120c;color:#efe6d8;font-family:"DM Mono",ui-monospace,monospace;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:"Space Mono",ui-monospace,monospace}
+    a{color:inherit;text-decoration:none}
+    a.tlink{color:#f5893a;border-bottom:1px solid rgba(245,137,58,.4);transition:border-color .2s}
+    a.tlink:hover{border-color:#f5893a}
+    ::selection{background:#f5893a;color:#17120c}
+    @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+    @keyframes drift1{0%{transform:translate(0,0)}50%{transform:translate(7vw,5vh)}100%{transform:translate(0,0)}}
+    @keyframes drift2{0%{transform:translate(0,0)}50%{transform:translate(-6vw,-4vh)}100%{transform:translate(0,0)}}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+  </style>
 </head>
-
 <body>
+  <x-dc>
+    <helmet></helmet>
+    <div style="position:relative;min-height:100vh;overflow-x:hidden">
+      <!-- ANIMATED BACKGROUND -->
+      <div style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
+        <div style="position:absolute;top:-20%;left:-10%;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(245,137,58,.16),transparent 62%);filter:blur(20px);animation:drift1 26s ease-in-out infinite"></div>
+        <div style="position:absolute;bottom:-25%;right:-10%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(196,110,60,.13),transparent 62%);filter:blur(20px);animation:drift2 32s ease-in-out infinite"></div>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:26px 26px;opacity:.5"></div>
+      </div>
 
-  <!-- New Soft Nav -->
-  <nav id="soft-nav">
-    <a href="#" class="nav-logo">KM.</a>
-    <ul class="soft-menu d-none d-md-flex">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="blog/index.html">Blog</a></li>
-      <li><a href="mailto:kenetd98@gmail.com" class="btn-soft" style="padding: 8px 20px; color: white;">Contact</a></li>
-      <!-- GitHub Profile -->
-      <li style="margin-left: 10px;"><a href="https://github.com/Rochy0509" target="_blank"
-          style="font-size: 1.3rem; color: var(--soft-text);"><i class="bi bi-github"></i></a></li>
-      <!-- Google Translate Placeholder -->
-      <li id="google_translate_element"></li>
-    </ul>
-    <!-- Simple Mobile Menu Icon (Placeholder for now) -->
-    <i class="bi bi-list d-md-none" style="font-size: 1.5rem;"></i>
-  </nav>
+      <div style="position:relative;z-index:1">
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="container">
-      <h1>Kenneth Martinez</h1>
-      <p>Mechatronics Engineer • Robotics Developer • Innovator</p>
+      <!-- TELEMETRY TICKER -->
+      <div style="border-bottom:1px solid rgba(245,137,58,.22);background:rgba(23,18,12,.6);overflow:hidden;white-space:nowrap">
+        <div style="display:inline-flex;gap:40px;padding:8px 0;font-size:11px;letter-spacing:1px;color:#a8977e;animation:marquee 30s linear infinite;min-width:200%">
+          <span>{{ ticker }}</span><span>{{ ticker }}</span>
+        </div>
+      </div>
+
+      <!-- NAV -->
+      <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,64px);backdrop-filter:blur(12px);background:rgba(23,18,12,.7);border-bottom:1px solid rgba(255,255,255,.07)">
+        <a href="#top" style="font-weight:700;letter-spacing:1px;font-size:15px;display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace">
+          <span style="width:9px;height:9px;background:#f5893a;display:inline-block;border-radius:50%;box-shadow:0 0 10px rgba(245,137,58,.9)"></span>KM<span style="color:#f5893a;animation:blink 1.2s step-end infinite">_</span>
+        </a>
+        <div style="display:flex;align-items:center;gap:clamp(12px,2.2vw,26px);font-size:12.5px;letter-spacing:.5px">
+          <a href="#about" style="color:#b6a88f">about</a>
+          <a href="#skills" style="color:#b6a88f">skills</a>
+          <a href="#experience" style="color:#b6a88f">experience</a>
+          <a href="#work" style="color:#b6a88f">work</a>
+          <a href="blog/index.html" style="color:#b6a88f">blog</a>
+          <a href="mailto:kenetd98@gmail.com" style="padding:8px 16px;border:1px solid #f5893a;color:#f5893a;border-radius:999px;transition:background .2s,color .2s" style-hover="background:#f5893a;color:#17120c">contact</a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <header id="top" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(20px,5vw,64px) clamp(40px,6vw,72px)">
+        <div style="display:grid;grid-template-columns:minmax(0,1.6fr) minmax(200px,0.85fr);gap:clamp(32px,5vw,60px);align-items:center">
+          <div>
+            <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1px;color:#f5893a;border:1px solid rgba(245,137,58,.3);border-radius:999px;padding:6px 14px;margin-bottom:26px"><span style="width:7px;height:7px;border-radius:50%;background:#f5893a;animation:blink 1.6s step-end infinite"></span>available for opportunities</div>
+            <h1 style="margin:0;font-weight:700;font-size:clamp(46px,9.5vw,120px);line-height:.92;letter-spacing:-.04em">Kenneth<br>Marti<span style="color:#f5893a">n</span>ez</h1>
+            <div style="margin-top:22px;font-size:clamp(15px,2.2vw,22px);color:#efe6d8;min-height:1.6em">> <span style="color:#f5893a">{{ typed }}</span><span style="animation:blink 1s step-end infinite;color:#f5893a">█</span></div>
+            <p style="margin:clamp(22px,3vw,32px) 0 0;max-width:46ch;font-size:15px;line-height:1.7;color:#b6a88f">Mechatronics Engineering graduate & MASc researcher, building intelligent systems where mechanical design, electronics, and software meet focused on <span style="color:#efe6d8">robotics & autonomy</span>.</p>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(26px,4vw,38px)">
+              <a href="#work" style="display:inline-flex;align-items:center;gap:10px;padding:13px 24px;background:#f5893a;color:#17120c;font-weight:500;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,137,58,.35)">view work →</a>
+              <a href="https://github.com/Rochy0509" style="display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid rgba(255,255,255,.18);color:#efe6d8;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:border-color .2s" style-hover="border-color:#f5893a">github</a>
+            </div>
+          </div>
+          <div style="position:relative;justify-self:center;transform:rotate(2deg)">
+            <div style="position:relative;width:min(300px,72vw);aspect-ratio:4/5;background:#241d15;overflow:hidden;border-radius:26px;border:1px solid rgba(245,137,58,.25)">
+              <img src="assets/img/profile.jpg" alt="Kenneth Martinez" style="width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.35) contrast(1.03) saturate(1.05)">
+              <div style="position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(23,18,12,.55))"></div>
+              <div style="position:absolute;bottom:12px;left:12px;font-size:10px;letter-spacing:1px;color:#f5893a;background:rgba(23,18,12,.82);padding:4px 9px;border-radius:999px;border:1px solid rgba(245,137,58,.35)">SUBJECT_01</div>
+            </div>
+            <div style="position:absolute;top:-16px;right:-16px;background:#17120c;border:1px solid rgba(245,137,58,.3);border-radius:14px;padding:10px 12px;font-size:10px;line-height:1.5;color:#a8977e;transform:rotate(-5deg)">STATUS<br><span style="color:#f5893a">ONLINE</span></div>
+          </div>
+        </div>
+        <div style="display:flex;gap:clamp(14px,2vw,20px);flex-wrap:wrap;margin-top:clamp(44px,7vw,80px)">
+          <sc-for list="{{ stats }}" as="st" hint-placeholder-count="4">
+            <div style="flex:1;min-width:150px;background:rgba(36,29,21,.55);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:18px 20px;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(245,137,58,.5);transform:translateY(-3px)">
+              <div style="font-family:'Space Mono',monospace;font-size:clamp(26px,3.6vw,38px);font-weight:700;letter-spacing:-.02em;color:#f5893a">{{ st.value }}</div>
+              <div style="font-size:11px;letter-spacing:1px;color:#a8977e;margin-top:6px">{{ st.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+      </header>
+
+      <!-- ABOUT -->
+      <section id="about" style="max-width:1240px;margin:0 auto;padding:clamp(52px,8vw,104px) clamp(20px,5vw,64px)">
+        <div style="display:grid;grid-template-columns:minmax(0,0.36fr) minmax(0,1fr);gap:clamp(24px,5vw,60px)">
+          <div data-reveal=""><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a">// 00_ABOUT</div></div>
+          <div data-reveal="">
+            <p style="margin:0;font-family:'Space Mono',monospace;font-size:clamp(21px,3vw,31px);line-height:1.45;font-weight:400">I bridge mechanical design, electronics, and software to build <span style="color:#f5893a">intelligent systems that solve real-world problems.</span></p>
+            <p style="margin:clamp(22px,3vw,30px) 0 0;font-size:14.5px;line-height:1.8;color:#b6a88f;max-width:62ch">I am a Mechatronics Engineering graduate now pursuing an <span style="color:#efe6d8">MASc at Ontario Tech University</span> in the <span style="color:#efe6d8">AVEC Lab</span>, researching sensing and control for agricultural robots. From building autonomous robots at <a class="tlink" href="https://moduleaf.ca/">Moduleaf</a> to designing humanoid arms at <span style="color:#efe6d8">GRASP Lab</span>. I am driven by hands-on exploration and continuous learning with an eye on the future of humanoid and field robotics.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" style="max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,72px) clamp(20px,5vw,64px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:clamp(26px,4vw,44px)" data-reveal="">
+          <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a">// 01_STACK</div><h2 style="margin:8px 0 0;font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-.02em">Technical Arsenal</h2></div>
+          <a class="tlink" href="blog/index.html" style="font-size:13px">read technical blog →</a>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:14px">
+          <sc-for list="{{ skills }}" as="s" hint-placeholder-count="6">
+            <div data-reveal="" style="flex:1;min-width:150px;background:rgba(36,29,21,.55);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:20px;display:flex;flex-direction:column;gap:14px;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(245,137,58,.5);transform:translateY(-4px)">
+              <div style="height:38px;display:flex;align-items:center"><img src="{{ s.img }}" alt="{{ s.name }}" style="max-height:36px;max-width:64px;object-fit:contain"></div>
+              <div>
+                <div style="font-family:'Space Mono',monospace;font-size:18px;font-weight:700;letter-spacing:-.01em">{{ s.name }}</div>
+                <div style="font-size:10.5px;letter-spacing:1px;color:#a8977e;margin-top:4px">{{ s.tag }}</div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" style="max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,72px) clamp(20px,5vw,64px)">
+        <div style="margin-bottom:clamp(26px,4vw,44px)" data-reveal=""><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a">// 02_LOG</div><h2 style="margin:8px 0 0;font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-.02em">Experience</h2></div>
+        <div style="position:relative;padding-left:clamp(18px,3vw,34px);border-left:1px solid rgba(245,137,58,.25)">
+          <sc-for list="{{ experience }}" as="job" hint-placeholder-count="6">
+            <div data-reveal="" style="position:relative;padding:0 0 clamp(28px,3.5vw,42px)">
+              <span style="position:absolute;left:calc(-1 * clamp(18px,3vw,34px) - 5px);top:4px;width:9px;height:9px;border-radius:50%;background:#f5893a;box-shadow:0 0 0 4px rgba(245,137,58,.18)"></span>
+              <div style="background:rgba(36,29,21,.5);border:1px solid rgba(255,255,255,.07);border-radius:20px;padding:clamp(18px,2.5vw,26px);transition:border-color .25s,transform .25s" style-hover="border-color:rgba(245,137,58,.4);transform:translateX(4px)">
+                <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline">
+                  <div style="font-family:'Space Mono',monospace;font-size:clamp(18px,2.3vw,23px);font-weight:700;letter-spacing:-.01em">{{ job.role }}</div>
+                  <div style="font-size:11px;letter-spacing:1px;color:#f5893a">{{ job.period }}</div>
+                </div>
+                <div style="font-size:12.5px;color:#cbbfa9;margin-top:6px">{{ job.org }} · <span style="color:#a8977e">{{ job.location }}</span></div>
+                <ul style="margin:16px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px">
+                  <sc-for list="{{ job.bullets }}" as="b" hint-placeholder-count="2">
+                    <li style="position:relative;padding-left:20px;font-size:13.5px;line-height:1.65;color:#c3b7a1"><span style="position:absolute;left:0;top:2px;color:#f5893a">›</span>{{ b }}</li>
+                  </sc-for>
+                </ul>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- PUBLICATIONS -->
+      <section id="publications" style="max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,72px) clamp(20px,5vw,64px)">
+        <div style="margin-bottom:clamp(26px,4vw,44px)" data-reveal=""><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a">// 03_RESEARCH</div><h2 style="margin:8px 0 0;font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-.02em">Publications</h2></div>
+        <div style="display:flex;flex-direction:column;gap:14px">
+          <sc-for list="{{ publications }}" as="p" hint-placeholder-count="3">
+            <a href="{{ p.doi }}" data-reveal="" style="display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(12px,2.5vw,26px);align-items:center;background:rgba(36,29,21,.5);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:clamp(16px,2.2vw,24px);transition:border-color .25s,transform .25s" style-hover="border-color:rgba(245,137,58,.45);transform:translateY(-3px)">
+              <span style="font-family:'Space Mono',monospace;font-size:13px;color:#f5893a">{{ p.idx }}</span>
+              <span>
+                <span style="display:block;font-family:'Space Mono',monospace;font-size:clamp(15px,2vw,19px);font-weight:700;letter-spacing:-.01em;line-height:1.35">{{ p.title }}</span>
+                <span style="display:block;font-size:11.5px;color:#a8977e;margin-top:8px">{{ p.authors }}</span>
+              </span>
+              <span style="font-size:12px;color:#f5893a;white-space:nowrap">DOI ↗</span>
+            </a>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section id="work" style="max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,72px) clamp(20px,5vw,64px)">
+        <div style="margin-bottom:clamp(26px,4vw,44px)" data-reveal=""><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a">// 04_BUILDS</div><h2 style="margin:8px 0 0;font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-.02em">Selected Works</h2></div>
+
+        <!-- FEATURED ARHA -->
+        <div data-reveal="" style="background:rgba(36,29,21,.6);border:1px solid rgba(245,137,58,.3);border-radius:26px;overflow:hidden;margin-bottom:clamp(24px,3vw,38px)">
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:14px clamp(18px,2.4vw,28px);border-bottom:1px solid rgba(245,137,58,.2);font-size:11px;letter-spacing:1px;color:#f5893a">
+            <span>● FEATURED / CAPSTONE</span><span style="color:#a8977e">ARHA</span>
+          </div>
+          <div style="display:grid;grid-template-columns:minmax(260px,0.9fr) minmax(0,1.1fr);gap:clamp(22px,3vw,40px);padding:clamp(22px,3vw,40px);align-items:start">
+            <div>
+              <span style="display:inline-block;font-size:10px;letter-spacing:1px;color:#17120c;background:#f5893a;padding:5px 11px;border-radius:999px;margin-bottom:16px">BIMANUAL ROBOT</span>
+              <h3 style="margin:0;font-size:clamp(26px,3.4vw,40px);font-weight:700;letter-spacing:-.02em;line-height:1.02">ARHA</h3>
+              <p style="margin:8px 0 0;font-size:12px;color:#a8977e">Assistive Robotic Health Aide · Bimanual Robot</p>
+              <p style="margin:18px 0 0;font-size:14px;line-height:1.75;color:#c3b7a1;max-width:54ch">A 6-DOF bimanual robot built as a senior capstone for long-term care settings. I brought up a full ROS2 Humble stack, MoveIt2 for motion planning and ros2_control for hardware abstraction, talking to STM32H723ZG firmware over CAN bus, and wrote a custom TCP driver bridging the PC-side stack with the embedded controller. </p>
+              <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px">
+                <sc-for list="{{ arhaStack }}" as="tag" hint-placeholder-count="6">
+                  <span style="font-size:10.5px;letter-spacing:.5px;color:#cbbfa9;border:1px solid rgba(245,137,58,.3);padding:5px 11px;border-radius:999px">{{ tag }}</span>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr;gap:14px;max-width:500px">
+              <!-- ARHA GIF -->
+              <div style="position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:16px;background:repeating-linear-gradient(45deg,#241d15,#241d15 9px,#2b2318 9px,#2b2318 18px);border:1px solid rgba(245,137,58,.22)">
+                <img src="assets/gif/arha.gif" alt="ARHA Demo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT GRID (asymmetric offsets) -->
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(18px,2.5vw,30px);align-items:start">
+          <sc-for list="{{ projects }}" as="pr" hint-placeholder-count="4">
+            <div data-reveal="" style="display:flex;flex-direction:column;background:rgba(36,29,21,.5);border:1px solid rgba(255,255,255,.07);border-radius:22px;overflow:hidden;margin-top:{{ pr.offset }};transition:border-color .3s,transform .3s" style-hover="border-color:rgba(245,137,58,.45);transform:translateY(-5px)">
+              <div style="position:relative;aspect-ratio:16/11;overflow:hidden;background:#241d15">
+                <img src="{{ pr.img }}" alt="{{ pr.title }}" style="width:100%;height:100%;object-fit:cover;display:block;filter:sepia(.25) contrast(1.02);transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .4s" style-hover="transform:scale(1.06);filter:sepia(0)">
+                <span style="position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:1px;color:#17120c;background:#f5893a;padding:4px 10px;border-radius:999px">{{ pr.tag }}</span>
+              </div>
+              <div style="padding:20px">
+                <h3 style="margin:0;font-size:clamp(18px,2.2vw,22px);font-weight:700;letter-spacing:-.01em">{{ pr.title }}</h3>
+                <p style="margin:10px 0 0;font-size:13.5px;line-height:1.65;color:#b6a88f">{{ pr.desc }}</p>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section id="testimonials" style="max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,72px) clamp(20px,5vw,64px)">
+        <div style="margin-bottom:clamp(26px,4vw,44px)" data-reveal=""><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a">// 05_SIGNALS</div><h2 style="margin:8px 0 0;font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-.02em">Testimonials</h2></div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px">
+          <sc-for list="{{ testimonials }}" as="t" hint-placeholder-count="3">
+            <div data-reveal="" style="background:rgba(36,29,21,.5);border:1px solid rgba(255,255,255,.07);border-radius:22px;padding:clamp(22px,2.5vw,28px);display:flex;flex-direction:column;gap:18px;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(245,137,58,.4);transform:translateY(-4px)">
+              <div style="font-family:'Space Mono',monospace;font-size:38px;line-height:.5;color:#f5893a">“</div>
+              <p style="margin:0;font-size:13.5px;line-height:1.7;color:#c3b7a1;flex:1">{{ t.quote }}</p>
+              <div style="display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08)">
+                <div style="width:38px;height:38px;border-radius:50%;overflow:hidden;background:#241d15;flex:none"><img src="{{ t.img }}" alt="{{ t.name }}" style="width:100%;height:100%;object-fit:cover;filter:sepia(.3)"></div>
+                <div><div style="font-family:'Space Mono',monospace;font-size:14px;font-weight:700">{{ t.name }}</div><div style="font-size:10.5px;color:#a8977e;margin-top:2px">{{ t.role }}</div></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <footer id="contact" style="position:relative;margin-top:clamp(40px,6vw,80px)">
+        <div style="max-width:1240px;margin:0 auto;padding:clamp(52px,9vw,110px) clamp(20px,5vw,64px)">
+          <div style="background:linear-gradient(135deg,rgba(245,137,58,.14),rgba(196,110,60,.06));border:1px solid rgba(245,137,58,.3);border-radius:30px;padding:clamp(32px,5vw,64px)">
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a;margin-bottom:20px">// 06_CONTACT</div>
+            <h2 style="margin:0;font-size:clamp(30px,6vw,72px);font-weight:700;letter-spacing:-.03em;line-height:.98">Let's build something<br>that <span style="color:#f5893a">moves.</span></h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(28px,4vw,44px)">
+              <a href="mailto:kenetd98@gmail.com" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;background:#f5893a;color:#17120c;font-weight:500;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:transform .2s" style-hover="transform:translateY(-2px)">kenetd98@gmail.com →</a>
+              <a href="https://github.com/Rochy0509" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border:1px solid rgba(245,137,58,.4);color:#efe6d8;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:border-color .2s" style-hover="border-color:#f5893a">github</a>
+              <a href="blog/index.html" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border:1px solid rgba(245,137,58,.4);color:#efe6d8;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:border-color .2s" style-hover="border-color:#f5893a">blog</a>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:clamp(32px,4vw,52px);font-size:11px;letter-spacing:.5px;color:#a8977e">
+            <span>© 2026 KENNETH MARTINEZ</span>
+            <span>ONTARIO TECH UNIVERSITY / OSHAWA, ON</span>
+          </div>
+        </div>
+      </footer>
+
     </div>
-  </section>
+  </div>
+  </x-dc>
 
-  <main id="main">
+  <script type="text/x-dc" data-dc-script="">
+  class Component extends DCLogic {
+    state = { typed: '', ticker: '' };
 
-    <!-- About & Skills Container -->
-    <div class="container">
-      <div class="row">
-        <!-- About Card -->
-        <div class="col-lg-6" data-aos="fade-right" id="about">
-          <div class="soft-card h-100">
-            <div class="text-center">
-              <img src="assets/img/profile.jpg" alt="Kenneth Martinez" class="profile-img-soft">
-            </div>
-            <h3 class="mb-3" style="font-weight: 700; color: var(--soft-text);">About Me</h3>
-            <p style="color: var(--soft-muted); line-height: 1.7;">
-              I'm a final-year <strong>Mechatronics Engineering</strong> student at Ontario Tech University with a deep
-              passion for <strong>robotics, AI/ML, and automation</strong>. I thrive on bridging mechanical design,
-              electrical systems, and software to build intelligent systems that solve real-world problems.
-            </p>
-            <p style="color: var(--soft-muted); line-height: 1.7;">
-              From developing autonomous robots at <a href="https://moduleaf.ca/" target="_blank"
-                style="color: var(--soft-accent); text-decoration: none;"><strong>Moduleaf</strong></a>, an agricultural
-              robotics company, to designing humanoid arms at <strong>GRASP Lab</strong>, I'm driven by hands-on
-              exploration and a dedication to continuous learning. My goal is to build a successful career in robotics,
-              especially in the exciting field of <strong>humanoid robots</strong>.
-            </p>
-          </div>
-        </div>
-
-        <!-- Skills Card -->
-        <div class="col-lg-6" data-aos="fade-left" id="skills">
-          <div class="soft-card h-100">
-            <h3 class="mb-4" style="font-weight: 700; color: var(--soft-text);">Technical Arsenal</h3>
-
-            <div class="soft-skills-grid">
-              <!-- ROS -->
-              <div class="soft-skill-item">
-                <img src="assets/img/ROS-c9fe37daf4fa6d4fc6b94634250ab2c5.jpg" alt="ROS">
-                <span>ROS2</span>
-              </div>
-              <!-- Python -->
-              <div class="soft-skill-item">
-                <img src="assets/img/Python_logo.png" alt="Python">
-                <span>Python</span>
-              </div>
-              <!-- C++ -->
-              <div class="soft-skill-item">
-                <img src="assets/img/C_lang-03aeae24d0edc9b9f5f60c47c008b26e.png" alt="C++">
-                <span>C++</span>
-              </div>
-              <!-- OpenCV -->
-              <div class="soft-skill-item">
-                <img src="assets/img/OpenCV_Logo.png" alt="OpenCV">
-                <span>OpenCV</span>
-              </div>
-              <!-- CAD -->
-              <div class="soft-skill-item">
-                <img src="assets/img/sw_logo.png" alt="SolidWorks">
-                <span>CAD</span>
-              </div>
-              <!-- Embedded -->
-              <div class="soft-skill-item">
-                <img src="assets/img/CPU-a5775bbccfbe8bc22738fd6f20652e58.jpg" alt="Embedded">
-                <span>Embedded</span>
-              </div>
-            </div>
-
-            <div class="mt-4 text-center">
-              <a href="blog/index.html" style="font-weight: 600; font-size: 0.9rem; color: var(--soft-accent);">Read my
-                Technical Blog &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Experience Section -->
-    <section id="experience">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Professional Experience</h2>
-          <p>My journey in robotics and engineering.</p>
-        </div>
-
-        <div class="timeline">
-
-          <!-- Explorer Robotics -->
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="timeline-date">Sept 2025 - Present</span>
-              <h3 class="timeline-title">Robotics Instructor</h3>
-              <h4 class="timeline-subtitle">Explorer Robotics | Oshawa, ON</h4>
-              <ul>
-                <li>Mentor <strong>20 students</strong> weekly through PyBricks workshops (Scratch and Python), adapting
-                  <strong>teaching methods</strong> across elementary, junior, and senior levels for World Robot
-                  Olympiad preparation.
-                </li>
-                <li>Facilitate autonomous robot programming challenges, <strong>coaching students</strong> to develop
-                  problem-solving and debugging skills independently.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- ScalpelSpace -->
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="timeline-date">Aug 2025 - Mar 2026</span>
-              <h3 class="timeline-title">ROS2 Developer</h3>
-              <h4 class="timeline-subtitle">ScalpelSpace | Remote</h4>
-              <ul>
-                <li><strong>Lead integration</strong> of proprietary robotics hardware with ROS2 using ros2_control,
-                  streamlining motor control and sensor data acquisition for <strong>enhanced system
-                    reliability</strong>.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Moduleaf -->
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="timeline-date">Jan 2024 - May 2025</span>
-              <h3 class="timeline-title">Engineering Intern</h3>
-              <h4 class="timeline-subtitle">Moduleaf Technologies Inc. | Oshawa, ON</h4>
-              <ul>
-                <li>Engineered a <strong>6-DOF robotic arm</strong> harvesting system using ROS2 and MoveIt,
-                  successfully <strong>transitioning the project from concept to a functional MVP</strong>.</li>
-                <li>Evaluated <strong>7 kinematics planners</strong> to identify the optimal solution for predictable
-                  motion, <strong>reducing harvest cycle time</strong> by providing data-driven recommendations to the
-                  engineering team.</li>
-                <li>Implemented a <strong>YOLO segmentation model</strong> combined with algorithmic distance estimation
-                  to achieve <strong>autonomous berry localization</strong> and precision MoveIt path planning.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- GRASP Lab -->
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="timeline-date">Sept 2024 - April 2025</span>
-              <h3 class="timeline-title">Lab Technician</h3>
-              <h4 class="timeline-subtitle">GRASP Lab, Ontario Tech University | Oshawa, ON</h4>
-              <ul>
-                <li>Designed <strong>robotic arm system</strong> to validate human-like motion and test control system
-                  controllers for humanoid research.</li>
-                <li>Proactively maintained <strong>4 3D printers operational</strong>, ensuring continuous support for
-                  laboratory projects and graduate student research.</li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Panama Canal -->
-          <div class="timeline-item">
-            <div class="timeline-content">
-              <span class="timeline-date">Aug 2019 - Nov 2019</span>
-              <h3 class="timeline-title">Electrical Technician Intern</h3>
-              <h4 class="timeline-subtitle">The Panama Canal Authority | Panama City, Panama</h4>
-              <ul>
-                <li>Performed preventive maintenance on fire suppression systems, pumps, and sensors <strong>supporting
-                    24/7 canal operations</strong>.</li>
-                <li>Inspected electromechanical equipment for crane systems, <strong>ensuring compliance</strong> with
-                  international maritime safety standards.</li>
-              </ul>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Research Publications</h2>
-          <p>Contributions to the field of robotics and automation.</p>
-        </div>
-
-        <div class="row">
-          <!-- Paper 1 -->
-          <div class="col-lg-12 mb-4">
-            <div class="soft-card">
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--soft-text);">Development of an autonomous
-                strawberry harvesting robot</h3>
-              <p style="color: var(--soft-muted); margin-bottom: 0.5rem;">
-                Cole Levere, <strong>Kenneth Martinez</strong>, Mitchell Vella, Nicholas Varas, Jaho Seo
-              </p>
-              <a href="https://doi.org/10.82417/k92b-k044" target="_blank"
-                style="font-size: 0.9rem; color: var(--soft-accent);">
-                <i class="bi bi-link-45deg"></i> https://doi.org/10.82417/k92b-k044
-              </a>
-            </div>
-          </div>
-
-          <!-- Paper 2 -->
-          <div class="col-lg-12 mb-4">
-            <div class="soft-card">
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--soft-text);">GRASP-01: A low-cost 7 degree
-                of freedom humanoid robotic arm</h3>
-              <p style="color: var(--soft-muted); margin-bottom: 0.5rem;">
-                <strong>Kenneth Martinez</strong>, Riley Workman, Md Shafakat Masud, Haoxiang Lang
-              </p>
-              <a href="https://doi.org/10.82417/ad8m-2p59" target="_blank"
-                style="font-size: 0.9rem; color: var(--soft-accent);">
-                <i class="bi bi-link-45deg"></i> https://doi.org/10.82417/ad8m-2p59
-              </a>
-            </div>
-          </div>
-
-          <!-- Paper 3 -->
-          <div class="col-lg-12">
-            <div class="soft-card">
-              <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--soft-text);">Development of AI-driven
-                universal robot with vision perception for robotic manipulation</h3>
-              <p style="color: var(--soft-muted); margin-bottom: 0.5rem;">
-                Md Shafakat Masud, Xiaolong Liu, <strong>Kenneth Martinez</strong>, Riley Workman, Haxiang Lang, Jing
-                Ren
-              </p>
-              <a href="https://doi.org/10.82417/h4zr-pj16" target="_blank"
-                style="font-size: 0.9rem; color: var(--soft-accent);">
-                <i class="bi bi-link-45deg"></i> https://doi.org/10.82417/h4zr-pj16
-              </a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <section id="projects">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title">
-          <h2>Selected Works</h2>
-        </div>
-
-        <div class="row">
-
-          <!-- Project 1: GRASP01 -->
-          <div class="col-lg-6">
-            <div class="soft-card project-card-soft">
-              <div class="project-img-wrapper">
-                <img src="assets/img/projects/project 1.jpg" alt="GRASP01 Humanoid Arm">
-              </div>
-              <div class="project-content">
-                <h3>GRASP01 Humanoid Arm</h3>
-                <p>A fully 3D-printed 6-DOF humanoid robotic arm designed from scratch. Currently being enhanced with
-                  ROS2 control, impedance control, and gravity compensation.</p>
-                <!-- <a href="#" class="btn-soft">View Details</a> -->
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: OpenPath -->
-          <div class="col-lg-6">
-            <div class="soft-card project-card-soft">
-              <div class="project-img-wrapper">
-                <img src="assets/img/projects/Trash picking.webp" alt="OpenPath Robot">
-              </div>
-              <div class="project-content">
-                <h3>Autonomous Litter Robot</h3>
-                <p>Award-winning autonomous mobile robot capable of navigating urban environments to detect and clean
-                  litter using Computer Vision and Jetson Nano.</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Moduleaf -->
-          <div class="col-lg-6">
-            <div class="soft-card project-card-soft">
-              <div class="project-img-wrapper">
-                <img src="assets/img/projects/project 3.jpg" alt="Moduleaf Robotics">
-              </div>
-              <div class="project-content">
-                <h3>Moduleaf Robotics</h3>
-                <p>Contributed to an agricultural robotics company developing autonomous robots for farming
-                  applications. Worked on mechanical design, ROS2 package development for arm control, and sensor
-                  integration (LiDAR/GPS).</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4: OTU Robotics -->
-          <div class="col-lg-6">
-            <div class="soft-card project-card-soft">
-              <div class="project-img-wrapper">
-                <img src="assets/img/projects/project 2.jpg" alt="RoboMaster">
-              </div>
-              <div class="project-content">
-                <h3>Ontario Tech Robotics</h3>
-                <p>Led the mechanical design and ROS implementation for RoboMaster competitive robots. Improved team
-                  workflows and prototyping processes.</p>
-                <!-- <a href="#" class="btn-soft">View Details</a> -->
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials section-bg"
-      style="padding: 60px 0; background-image: url('assets/img/roboticarm.png'); background-repeat: repeat; background-size: 400px;">
-      <div class="container" data-aos="fade-up">
-        <div class="section-title" style="text-align: center; margin-bottom: 40px;">
-          <h2 style="font-size: 2rem; font-weight: 700; color: var(--soft-text);">Testimonials</h2>
-        </div>
-        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="testimonial-item"
-                style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 30px rgba(0,0,0,0.05); text-align: center;">
-                <img src="assets/img/testimonials/Default.png" class="testimonial-img"
-                  alt="Testimonial from Mirisan Ravindran"
-                  style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 15px; object-fit: cover;">
-                <h3 style="font-weight: 700; color: var(--soft-text); margin-bottom: 5px;">Mirisan Ravindran</h3>
-                <h4 style="font-size: 0.9rem; color: var(--soft-muted); margin-bottom: 15px;">Team Member in RoboMaster
-                </h4>
-                <p style="color: var(--soft-muted); line-height: 1.7; font-style: italic;">
-                  "I have known Kenneth since 2021 when we first began working together. He introduced me to the
-                  fascinating world of robotics and has been an incredible mentor ever since. Kenneth's unmatched
-                  expertise in RoboMaster and his passion for humanoid robots are truly inspiring. Whenever he
-                  encounters a new challenge, he dives deep into research until he fully masters the topic. His
-                  leadership, dedication, and willingness to share his knowledge have not only propelled our team
-                  forward but have also significantly shaped my own understanding of robotics."
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-item"
-                style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 30px rgba(0,0,0,0.05); text-align: center;">
-                <img src="assets/img/testimonials/Default.png" class="testimonial-img"
-                  alt="Testimonial from Riley Workman"
-                  style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 15px; object-fit: cover;">
-                <h3 style="font-weight: 700; color: var(--soft-text); margin-bottom: 5px;">Riley Workman</h3>
-                <h4 style="font-size: 0.9rem; color: var(--soft-muted); margin-bottom: 15px;">GRASP01 Group Member</h4>
-                <p style="color: var(--soft-muted); line-height: 1.7; font-style: italic;">
-                  "I had the pleasure of working closely with Kenneth Martinez, and I can confidently say he is an
-                  exceptional colleague. Kenneth is reliable, hardworking, and consistently delivers results on time.
-                  His dedication to achieving perfection in assignments and projects is remarkable, and he excels in
-                  problem-solving and tackling challenges with expertise and creativity."
-                </p>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="testimonial-item"
-                style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 5px 30px rgba(0,0,0,0.05); text-align: center;">
-                <img src="assets/img/testimonials/Default.png" class="testimonial-img"
-                  alt="Testimonial from Michael Rotella"
-                  style="width: 80px; height: 80px; border-radius: 50%; margin-bottom: 15px; object-fit: cover;">
-                <h3 style="font-weight: 700; color: var(--soft-text); margin-bottom: 5px;">Michael Rotella</h3>
-                <h4 style="font-size: 0.9rem; color: var(--soft-muted); margin-bottom: 15px;">OpenPath Technologies
-                  Member</h4>
-                <p style="color: var(--soft-muted); line-height: 1.7; font-style: italic;">
-                  "I met Kenneth at the start of my second year at university. He has significantly influenced my
-                  journey into electronics, robotics and programming. His patience, knowledge, and passion for these
-                  fields have inspired me and helped me develop skills I never thought I would have. Kenneth's
-                  problem-solving abilities, leadership qualities, and passion for his work would be an asset to any
-                  company."
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </div>
-    </section>
-    <!-- End Testimonials Section -->
-
-  </main>
-
-  <footer style="text-align: center; padding: 40px; color: var(--soft-muted); font-size: 0.9rem;">
-    <p>&copy; 2026 Kenneth Martinez.</p>
-  </footer>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <script>
-    AOS.init();
-
-    // Initialize Testimonials Swiper with autoplay
-    new Swiper('.testimonials-slider', {
-      speed: 600,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
-      },
-      slidesPerView: 1,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      }
-    });
-  </script>
-
-  <!-- Google Translate Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'es,en', // Spanish and English
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- Netlify Identity Widget for CMS login -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
+    componentDidMount() {
+      this.roles = ['ROBOTICS DEVELOPER', 'MASc RESEARCHER', 'ROS2 ENGINEER', 'HUMANOID BUILDER', 'AUTONOMY NERD'];
+      this._ci = 0; this._ri = 0; this._del = false; this._pause = 0;
+      this._type = setInterval(() => {
+        if (this._pause > 0) { this._pause--; return; }
+        const full = this.roles[this._ri];
+        if (!this._del) {
+          this._ci++;
+          this.setState({ typed: full.slice(0, this._ci) });
+          if (this._ci >= full.length) { this._del = true; this._pause = 16; }
+        } else {
+          this._ci--;
+          this.setState({ typed: full.slice(0, this._ci) });
+          if (this._ci <= 0) { this._del = false; this._ri = (this._ri + 1) % this.roles.length; this._pause = 3; }
         }
-      });
+      }, 75);
+
+      const rnd = (a, b, d) => (a + Math.random() * (b - a)).toFixed(d);
+      const tick = () => {
+        const t = new Date();
+        const hh = String(t.getHours()).padStart(2, '0');
+        const mm = String(t.getMinutes()).padStart(2, '0');
+        const ss = String(t.getSeconds()).padStart(2, '0');
+        const parts = [
+          'SYS ' + hh + ':' + mm + ':' + ss,
+          'TORQUE ' + rnd(3.8, 4.6, 1) + ' N·m',
+          'JOINT_TEMP ' + rnd(38, 44, 0) + '°C',
+          'CTRL_LOOP 1000 Hz',
+          'LATENCY ' + rnd(8, 16, 0) + ' ms',
+          'ROS2 humble',
+          'UPTIME 99.9%',
+          'MODE autonomous',
+        ];
+        this.setState({ ticker: parts.join('  ··  ') + '  ··  ' });
+      };
+      tick();
+      this._clock = setInterval(tick, 1000);
+
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      this._io = io;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(28px)';
+          el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+          el.style.transitionDelay = (i % 4) * 55 + 'ms';
+          io.observe(el);
+        });
+      }));
     }
+
+    componentWillUnmount() {
+      clearInterval(this._type); clearInterval(this._clock);
+      if (this._io) this._io.disconnect();
+    }
+
+    renderVals() {
+      const base = 'assets/img/';
+      return {
+        typed: this.state.typed,
+        ticker: this.state.ticker,
+        stats: [
+          { value: '6-DOF', label: 'HUMANOID ARM BUILT' },
+          { value: '3', label: 'PUBLICATIONS' },
+          { value: '20+', label: 'STUDENTS MENTORED' },
+          { value: 'ROS2', label: 'CORE STACK' },
+        ],
+        arhaStack: ['ROS2 Humble', 'MoveIt2', 'ros2_control', 'STM32H723ZG', 'CAN bus', 'Custom TCP driver'],
+        skills: [
+          { name: 'ROS2', tag: 'MIDDLEWARE', img: base + 'ROS-c9fe37daf4fa6d4fc6b94634250ab2c5.jpg' },
+          { name: 'Python', tag: 'LANGUAGE', img: base + 'Python_logo.png' },
+          { name: 'C++', tag: 'LANGUAGE', img: base + 'C_lang-03aeae24d0edc9b9f5f60c47c008b26e.png' },
+          { name: 'OpenCV', tag: 'VISION', img: base + 'OpenCV_Logo.png' },
+          { name: 'SolidWorks', tag: 'CAD', img: base + 'sw_logo.png' },
+          { name: 'Embedded', tag: 'FIRMWARE', img: base + 'CPU-a5775bbccfbe8bc22738fd6f20652e58.jpg' },
+        ],
+        experience: [
+          { period: '2026 — PRESENT', role: 'Graduate Researcher (MASc)', org: 'AVEC Lab, Ontario Tech University', location: 'Oshawa, ON', bullets: [
+            'Pursuing an MASc in Mechatronics Engineering, researching sensing and control systems applied to agricultural robots.',
+            'Developing perception and control pipelines to improve autonomy and reliability in field-robotics applications.',
+          ]},
+          { period: 'SEP 2025 — PRESENT', role: 'Robotics Instructor', org: 'Explorer Robotics', location: 'Oshawa, ON', bullets: [
+            'Mentor 20 students weekly through PyBricks workshops (Scratch and Python), adapting teaching methods across elementary, junior, and senior levels for World Robot Olympiad preparation.',
+            'Facilitate autonomous robot programming challenges, coaching students to develop problem-solving and debugging skills independently.',
+          ]},
+          { period: 'AUG 2025 — MAR 2026', role: 'ROS2 Developer', org: 'ScalpelSpace', location: 'Remote', bullets: [
+            'Lead integration of proprietary robotics hardware with ROS2 using ros2_control, streamlining motor control and sensor data acquisition for enhanced system reliability.',
+          ]},
+          { period: 'JAN 2024 — MAY 2025', role: 'Engineering Intern', org: 'Moduleaf Technologies Inc.', location: 'Oshawa, ON', bullets: [
+            'Engineered a 6-DOF robotic arm harvesting system using ROS2 and MoveIt, transitioning the project from concept to a functional MVP.',
+            'Evaluated 7 kinematics planners to identify the optimal solution for predictable motion, reducing harvest cycle time via data-driven recommendations.',
+            'Implemented a YOLO segmentation model with algorithmic distance estimation for autonomous berry localization and precision MoveIt path planning.',
+          ]},
+          { period: 'SEP 2024 — APR 2025', role: 'Lab Technician', org: 'GRASP Lab, Ontario Tech University', location: 'Oshawa, ON', bullets: [
+            'Designed a robotic arm system to validate human-like motion and test control system controllers for humanoid research.',
+            'Maintained 4 3D printers operational, ensuring continuous support for laboratory projects and graduate research.',
+          ]},
+          { period: 'AUG 2019 — NOV 2019', role: 'Electrical Technician Intern', org: 'The Panama Canal Authority', location: 'Panama City, Panama', bullets: [
+            'Performed preventive maintenance on fire suppression systems, pumps, and sensors supporting 24/7 canal operations.',
+            'Inspected electromechanical equipment for crane systems, ensuring compliance with international maritime safety standards.',
+          ]},
+        ],
+        publications: [
+          { idx: '[01]', title: 'Development of an autonomous strawberry harvesting robot', authors: 'C. Levere, K. Martinez, M. Vella, N. Varas, J. Seo', doi: 'https://doi.org/10.82417/k92b-k044' },
+          { idx: '[02]', title: 'GRASP-01: A low-cost 7 degree of freedom humanoid robotic arm', authors: 'K. Martinez, R. Workman, M. S. Masud, H. Lang', doi: 'https://doi.org/10.82417/ad8m-2p59' },
+          { idx: '[03]', title: 'Development of AI-driven universal robot with vision perception for robotic manipulation', authors: 'M. S. Masud, X. Liu, K. Martinez, R. Workman, H. Lang, J. Ren', doi: 'https://doi.org/10.82417/h4zr-pj16' },
+        ],
+        projects: [
+          { title: 'GRASP01 Humanoid Arm', tag: 'HUMANOID', offset: '0px', img: base + 'projects/project%201.jpg', desc: 'A fully 3D-printed 6-DOF humanoid robotic arm designed from scratch. Being enhanced with ROS2 control, impedance control, and gravity compensation.' },
+          { title: 'Autonomous Litter Robot', tag: 'AUTONOMY', offset: '32px', img: base + 'projects/Trash%20picking.webp', desc: 'Award-winning autonomous mobile robot navigating urban environments to detect and clean litter using Computer Vision and Jetson Nano.' },
+          { title: 'Moduleaf Robotics', tag: 'AGRITECH', offset: '32px', img: base + 'projects/project%203.jpg', desc: 'Agricultural robotics for farming — mechanical design, ROS2 package development for arm control, and sensor integration (LiDAR/GPS).' },
+          { title: 'Ontario Tech Robotics', tag: 'ROBOMASTER', offset: '0px', img: base + 'projects/project%202.jpg', desc: 'Led mechanical design and ROS implementation for RoboMaster competitive robots. Improved team workflows and prototyping processes.' },
+        ],
+        testimonials: [
+          { name: 'Mirisan Ravindran', role: 'TEAM MEMBER · ROBOMASTER', img: base + 'testimonials/Default.png', quote: 'Kenneth introduced me to the world of robotics and has been an incredible mentor ever since. Whenever he encounters a new challenge, he dives deep into research until he fully masters it. His leadership and willingness to share knowledge propelled our team forward.' },
+          { name: 'Riley Workman', role: 'GRASP01 GROUP MEMBER', img: base + 'testimonials/Default.png', quote: 'An exceptional colleague — reliable, hardworking, and consistently delivering results on time. His dedication to perfection is remarkable, and he excels in problem-solving and tackling challenges with expertise and creativity.' },
+          { name: 'Michael Rotella', role: 'OPENPATH TECHNOLOGIES', img: base + 'testimonials/Default.png', quote: 'Kenneth significantly influenced my journey into electronics, robotics and programming. His patience, knowledge, and passion inspired me to develop skills I never thought I would have. He would be an asset to any company.' },
+        ],
+      };
+    }
+  }
   </script>
-
 </body>
-
 </html>

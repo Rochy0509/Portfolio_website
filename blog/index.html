@@ -1,232 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Kenneth Martinez Blog - Robotics & Engineering</title>
-  <meta name="description"
-    content="Explore Kenneth Martinez's blog featuring insights on robotics, mechatronics engineering, automation, ROS, and cutting-edge technology developments.">
-
-  <!-- Favicons -->
-  <link href="../assets/img/favicon.png" rel="icon">
-  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Vendor CSS Files -->
-  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="../assets/css/style.css" rel="stylesheet">
-
-  <!-- Blog Specific Overrides -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kenneth Martinez | Technical Blog</title>
+  <meta name="description" content="Technical blog on robotics, ROS2, machine learning, and mechatronics engineering by Kenneth Martinez.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="../support.js"></script>
+  <script src="posts.js"></script>
+  
   <style>
-    /* Ensure the blog uses the soft tech theme */
-    .blog-header {
-      text-align: center;
-      padding: 80px 0 40px;
-    }
-
-    .blog-header h1 {
-      font-weight: 800;
-      color: var(--soft-text);
-      margin-bottom: 20px;
-    }
-
-    .blog-header p {
-      color: var(--soft-muted);
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-    }
-
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      padding-bottom: 60px;
-    }
-
-    .blog-card {
-      /* Inherit soft-card properties but ensure full height */
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .blog-card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 20px 20px 0 0;
-    }
-
-    .blog-meta {
-      font-size: 0.85rem;
-      color: var(--soft-muted);
-      margin-bottom: 15px;
-      display: flex;
-      gap: 15px;
-      align-items: center;
-    }
-
-    .blog-category {
-      background: rgba(5, 99, 187, 0.1);
-      color: var(--soft-accent);
-      padding: 4px 12px;
-      border-radius: 50px;
-      font-weight: 600;
-    }
-
-    /* Translate Element Positioning in Nav */
-    .goog-te-gadget-simple {
-      background-color: transparent !important;
-      border: none !important;
-      font-size: 0.9rem !important;
-    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#17120c;color:#efe6d8;font-family:"DM Mono",ui-monospace,monospace;-webkit-font-smoothing:antialiased}
+    h1,h2,h3{font-family:"Space Mono",ui-monospace,monospace}
+    a{color:inherit;text-decoration:none}
+    a.tlink{color:#f5893a;border-bottom:1px solid rgba(245,137,58,.4);transition:border-color .2s}
+    a.tlink:hover{border-color:#f5893a}
+    ::selection{background:#f5893a;color:#17120c}
+    @keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+    @keyframes drift1{0%{transform:translate(0,0)}50%{transform:translate(7vw,5vh)}100%{transform:translate(0,0)}}
+    @keyframes drift2{0%{transform:translate(0,0)}50%{transform:translate(-6vw,-4vh)}100%{transform:translate(0,0)}}
+    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
   </style>
 </head>
-
 <body>
-
-  <!-- New Soft Nav -->
-  <nav id="soft-nav">
-    <a href="../index.html" class="nav-logo">KM.</a>
-    <ul class="soft-menu d-none d-md-flex align-items-center">
-      <li><a href="../index.html">Back to Portfolio</a></li>
-      <!-- Google Translate Placeholder -->
-      <li id="google_translate_element"></li>
-    </ul>
-    <!-- Simple Mobile Menu Icon -->
-    <i class="bi bi-list d-md-none" style="font-size: 1.5rem;"></i>
-  </nav>
-
-  <main id="main">
-    <div class="container">
-
-      <div class="blog-header" data-aos="fade-down">
-        <h1>Engineering & Robotics Journal</h1>
-        <p>Documenting my journey through ROS2, autonomous systems, and mechatronics design.</p>
+  <x-dc>
+    <helmet></helmet>
+    <div style="position:relative;min-height:100vh;overflow-x:hidden">
+      <!-- ANIMATED BACKGROUND -->
+      <div style="position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden">
+        <div style="position:absolute;top:-20%;left:-10%;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(circle,rgba(245,137,58,.16),transparent 62%);filter:blur(20px);animation:drift1 26s ease-in-out infinite"></div>
+        <div style="position:absolute;bottom:-25%;right:-10%;width:55vw;height:55vw;border-radius:50%;background:radial-gradient(circle,rgba(196,110,60,.13),transparent 62%);filter:blur(20px);animation:drift2 32s ease-in-out infinite"></div>
+        <div style="position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.04) 1px,transparent 1px);background-size:26px 26px;opacity:.5"></div>
       </div>
 
-      <div class="blog-grid" id="blog-posts" data-aos="fade-up">
-        <!-- Blog posts will be loaded here -->
-        <div class="text-center w-100 p-5">
-          <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">Loading...</span>
+      <div style="position:relative;z-index:1">
+
+      <!-- TELEMETRY TICKER -->
+      <div style="border-bottom:1px solid rgba(245,137,58,.22);background:rgba(23,18,12,.6);overflow:hidden;white-space:nowrap">
+        <div style="display:inline-flex;gap:40px;padding:8px 0;font-size:11px;letter-spacing:1px;color:#a8977e;animation:marquee 30s linear infinite;min-width:200%">
+          <span>{{ ticker }}</span><span>{{ ticker }}</span>
+        </div>
+      </div>
+
+      <!-- NAV -->
+      <nav style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:16px clamp(20px,5vw,64px);backdrop-filter:blur(12px);background:rgba(23,18,12,.7);border-bottom:1px solid rgba(255,255,255,.07)">
+        <a href="../index.html" style="font-weight:700;letter-spacing:1px;font-size:15px;display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace">
+          <span style="width:9px;height:9px;background:#f5893a;display:inline-block;border-radius:50%;box-shadow:0 0 10px rgba(245,137,58,.9)"></span>KM<span style="color:#f5893a;animation:blink 1.2s step-end infinite">_</span>
+        </a>
+        <div style="display:flex;align-items:center;gap:clamp(12px,2.2vw,26px);font-size:12.5px;letter-spacing:.5px">
+          <a href="../index.html#about" style="color:#b6a88f">about</a>
+          <a href="../index.html#skills" style="color:#b6a88f">skills</a>
+          <a href="../index.html#experience" style="color:#b6a88f">experience</a>
+          <a href="../index.html#work" style="color:#b6a88f">work</a>
+          <a href="index.html" style="color:#f5893a">blog</a>
+          <a href="mailto:kenetd98@gmail.com" style="padding:8px 16px;border:1px solid #f5893a;color:#f5893a;border-radius:999px;transition:background .2s,color .2s" style-hover="background:#f5893a;color:#17120c">contact</a>
+        </div>
+      </nav>
+
+      <!-- HERO -->
+      <header id="top" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(20px,5vw,64px) clamp(40px,6vw,72px)">
+        <div style="max-width:800px">
+          <div style="display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1px;color:#f5893a;border:1px solid rgba(245,137,58,.3);border-radius:999px;padding:6px 14px;margin-bottom:26px"><span style="width:7px;height:7px;border-radius:50%;background:#f5893a;animation:blink 1.6s step-end infinite"></span>technical blog</div>
+          <h1 style="margin:0;font-weight:700;font-size:clamp(46px,9.5vw,120px);line-height:.92;letter-spacing:-.04em">Technical<br><span style="color:#f5893a">Blog</span></h1>
+          <div style="margin-top:22px;font-size:clamp(15px,2.2vw,22px);color:#efe6d8;min-height:1.6em">> <span style="color:#f5893a">{{ typed }}</span><span style="animation:blink 1s step-end infinite;color:#f5893a">█</span></div>
+          <p style="margin:clamp(22px,3vw,32px) 0 0;max-width:46ch;font-size:15px;line-height:1.7;color:#b6a88f">Deep dives into robotics, autonomy, ML, and mechatronics. Real projects, real code, real lessons learned.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(26px,4vw,38px)">
+            <a href="../index.html#work" style="display:inline-flex;align-items:center;gap:10px;padding:13px 24px;background:#f5893a;color:#17120c;font-weight:500;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 10px 30px rgba(245,137,58,.35)">view projects →</a>
+            <a href="https://github.com/Rochy0509" style="display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid rgba(255,255,255,.18);color:#efe6d8;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:border-color .2s" style-hover="border-color:#f5893a">github</a>
           </div>
         </div>
-      </div>
+      </header>
+
+      <!-- BLOG POSTS -->
+      <section id="posts" style="max-width:1240px;margin:0 auto;padding:clamp(36px,6vw,72px) clamp(20px,5vw,64px)">
+        <div style="display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:clamp(26px,4vw,44px)" data-reveal="">
+          <div><div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a">// POSTS</div><h2 style="margin:8px 0 0;font-size:clamp(26px,4vw,42px);font-weight:700;letter-spacing:-.02em">Articles</h2></div>
+          <a class="tlink" href="https://github.com/Rochy0509" style="font-size:13px">view on github →</a>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px" id="posts-grid">
+          <sc-for list="{{ posts }}" as="p" hint-placeholder-count="3">
+            <article data-reveal="" style="background:rgba(36,29,21,.5);border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:border-color .25s,transform .25s" style-hover="border-color:rgba(245,137,58,.45);transform:translateY(-4px)">
+              <img src="{{ p.image }}" alt="{{ p.title }}" style="width:100%;height:200px;object-fit:cover;filter:sepia(.2) contrast(1.02);transition:transform .6s cubic-bezier(.2,.7,.2,1),filter .4s" style-hover="transform:scale(1.04);filter:sepia(0)">
+              <div style="padding:20px;display:flex;flex-direction:column;gap:10px;flex:1">
+                <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+                  <span style="font-size:10px;letter-spacing:1px;color:#17120c;background:#f5893a;padding:4px 10px;border-radius:999px">{{ p.category }}</span>
+                  <span style="font-size:11px;letter-spacing:.5px;color:#a8977e">{{ p.date }}</span>
+                </div>
+                <h3 style="margin:0;font-size:clamp(17px,2.1vw,21px);font-weight:700;letter-spacing:-.01em;line-height:1.3">{{ p.title }}</h3>
+                <p style="margin:0;font-size:13px;line-height:1.65;color:#b6a88f;flex:1">{{ p.excerpt }}</p>
+                <a href="{{ p.url }}" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;letter-spacing:.5px;color:#f5893a;border-bottom:1px solid rgba(245,137,58,.4);transition:border-color .2s;align-self:flex-start" style-hover="border-color:#f5893a">read more →</a>
+              </div>
+            </article>
+          </sc-for>
+        </div>
+      </section>
+
+      <!-- CONTACT FOOTER -->
+      <footer id="contact" style="position:relative;margin-top:clamp(40px,6vw,80px)">
+        <div style="max-width:1240px;margin:0 auto;padding:clamp(52px,9vw,110px) clamp(20px,5vw,64px)">
+          <div style="background:linear-gradient(135deg,rgba(245,137,58,.14),rgba(196,110,60,.06));border:1px solid rgba(245,137,58,.3);border-radius:30px;padding:clamp(32px,5vw,64px)">
+            <div style="font-family:'Space Mono',monospace;font-size:13px;letter-spacing:2px;color:#f5893a;margin-bottom:20px">// 06_CONTACT</div>
+            <h2 style="margin:0;font-size:clamp(30px,6vw,72px);font-weight:700;letter-spacing:-.03em;line-height:.98">Let's build something<br>that <span style="color:#f5893a">moves.</span></h2>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:clamp(28px,4vw,44px)">
+              <a href="mailto:kenetd98@gmail.com" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;background:#f5893a;color:#17120c;font-weight:500;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:transform .2s" style-hover="transform:translateY(-2px)">kenetd98@gmail.com →</a>
+              <a href="https://github.com/Rochy0509" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border:1px solid rgba(245,137,58,.4);color:#efe6d8;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:border-color .2s" style-hover="border-color:#f5893a">github</a>
+              <a href="../index.html" style="display:inline-flex;align-items:center;gap:10px;padding:15px 26px;border:1px solid rgba(245,137,58,.4);color:#efe6d8;font-size:13px;letter-spacing:.5px;border-radius:999px;transition:border-color .2s" style-hover="border-color:#f5893a">portfolio</a>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-top:clamp(32px,4vw,52px);font-size:11px;letter-spacing:.5px;color:#a8977e">
+            <span>© 2026 KENNETH MARTINEZ</span>
+            <span>ONTARIO TECH UNIVERSITY / OSHAWA, ON</span>
+          </div>
+        </div>
+      </footer>
 
     </div>
-  </main>
+  </div>
+  </x-dc>
 
-  <footer style="text-align: center; padding: 40px; color: var(--soft-muted); font-size: 0.9rem;">
-    <p>&copy; 2026 Kenneth Martinez.</p>
-  </footer>
+  <script type="text/x-dc" data-dc-script="">
+  class Component extends DCLogic {
+    state = { typed: '', ticker: '', posts: [] };
 
-  <!-- Vendor JS Files -->
-  <script src="../assets/vendor/aos/aos.js"></script>
-  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="../assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    componentDidMount() {
+      this.roles = ['ROBOTICS DEVELOPER', 'MASc RESEARCHER', 'ROS2 ENGINEER', 'HUMANOID BUILDER', 'AUTONOMY NERD'];
+      this._ci = 0; this._ri = 0; this._del = false; this._pause = 0;
+      this._type = setInterval(() => {
+        if (this._pause > 0) { this._pause--; return; }
+        const full = this.roles[this._ri];
+        if (!this._del) {
+          this._ci++;
+          this.setState({ typed: full.slice(0, this._ci) });
+          if (this._ci >= full.length) { this._del = true; this._pause = 16; }
+        } else {
+          this._ci--;
+          this.setState({ typed: full.slice(0, this._ci) });
+          if (this._ci <= 0) { this._del = false; this._ri = (this._ri + 1) % this.roles.length; this._pause = 3; }
+        }
+      }, 75);
 
-  <!-- Google Translate Script -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'es,en', // Spanish and English
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-        autoDisplay: false
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript"
-    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      const rnd = (a, b, d) => (a + Math.random() * (b - a)).toFixed(d);
+      const tick = () => {
+        const t = new Date();
+        const hh = String(t.getHours()).padStart(2, '0');
+        const mm = String(t.getMinutes()).padStart(2, '0');
+        const ss = String(t.getSeconds()).padStart(2, '0');
+        const parts = [
+          'SYS ' + hh + ':' + mm + ':' + ss,
+          'TORQUE ' + rnd(3.8, 4.6, 1) + ' N·m',
+          'JOINT_TEMP ' + rnd(38, 44, 0) + '°C',
+          'CTRL_LOOP 1000 Hz',
+          'LATENCY ' + rnd(8, 16, 0) + ' ms',
+          'ROS2 humble',
+          'UPTIME 99.9%',
+          'MODE autonomous',
+        ];
+        this.setState({ ticker: parts.join('  ··  ') + '  ··  ' });
+      };
+      tick();
+      this._clock = setInterval(tick, 1000);
 
-  <script>
-    AOS.init();
-  </script>
-
-  <!-- Blog Data -->
-  <script src="posts.js"></script>
-
-  <!-- Blog JavaScript -->
-  <script>
-    // Blog posts are loaded from posts.js into window.blogPosts
-
-    // Function to load and display blog posts
-    function loadBlogPosts() {
-      const blogGrid = document.getElementById('blog-posts');
-      const posts = window.blogPosts || [];
-
-      if (posts.length === 0) {
-        blogGrid.innerHTML = '<div class="no-posts"><h3>Coming Soon</h3></div>';
-        return;
+      // Load blog posts from posts.js
+      if (window.blogPosts) {
+        // p.image already includes 'images/' prefix, and blog/index.html is in blog/ folder
+        this.setState({ posts: window.blogPosts });
+      } else {
+        // Wait for posts.js to load
+        const checkPosts = setInterval(() => {
+          if (window.blogPosts) {
+            this.setState({ posts: window.blogPosts });
+            clearInterval(checkPosts);
+          }
+        }, 100);
       }
 
-      blogGrid.innerHTML = '';
-
-      posts.forEach(post => {
-        const article = document.createElement('article');
-        article.className = 'soft-card blog-card';
-        article.style.padding = '0'; // Override default padding for full image
-
-        article.innerHTML = `
-    <img src="${post.image}" alt="${post.title}" loading="lazy" onerror="this.src='../assets/img/hero-bg.jpg'"> <!-- Fallback image -->
-      <div style="padding: 25px; display: flex; flex-direction: column; flex-grow: 1;">
-        <div class="blog-meta">
-          <span class="blog-category">${post.category}</span>
-          <span><i class="bi bi-calendar3"></i> ${formatDate(post.date)}</span>
-        </div>
-        <h3 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 10px;">
-          <a href="${post.url}" style="color: var(--soft-text); text-decoration: none;">${post.title}</a>
-        </h3>
-        <p style="color: var(--soft-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1;">
-          ${post.excerpt}
-        </p>
-        <a href="${post.url}" style="color: var(--soft-accent); font-weight: 600; text-decoration: none;">
-          Read Article &rarr;
-        </a>
-      </div>
-        `;
-        blogGrid.appendChild(article);
-      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -6% 0px' });
+      this._io = io;
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        document.querySelectorAll('[data-reveal]').forEach((el, i) => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(28px)';
+          el.style.transition = 'opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1)';
+          el.style.transitionDelay = (i % 4) * 55 + 'ms';
+          io.observe(el);
+        });
+      }));
     }
 
-    // Format date for display
-    function formatDate(dateString) {
-      // Simple date parse or pass through
-      return dateString;
+    componentWillUnmount() {
+      clearInterval(this._type); clearInterval(this._clock);
+      if (this._io) this._io.disconnect();
     }
 
-    // Initialize AOS
-    AOS.init();
-
-    // Load blog posts when page loads
-    document.addEventListener('DOMContentLoaded', loadBlogPosts);
+    renderVals() {
+      return {
+        typed: this.state.typed,
+        ticker: this.state.ticker,
+        posts: this.state.posts,
+      };
+    }
+  }
   </script>
-
-  <!-- Netlify Identity Widget for CMS login -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
-
 </body>
-
 </html>
