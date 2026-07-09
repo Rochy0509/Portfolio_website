@@ -88,12 +88,11 @@
         grid-template-columns: 1fr !important;
       }
       /* ARHA GIF container: full width, no max-width constraint */
-      #arha-grid > div:last-child {
+      #arha-gif-container {
         max-width: none !important;
       }
-      #arha-grid > div:last-child > div {
+      #arha-gif-container > div {
         width: 100% !important;
-        max-width: 500px;
       }
       /* Testimonials: single column */
       section#testimonials > div:last-child {
@@ -107,17 +106,69 @@
       footer#contact > div > div:first-child > div:last-child > a {
         justify-content: center;
       }
-      /* Nav: smaller padding, hide some items or stack */
-      nav > div:last-child {
-        gap: 12px !important;
-        font-size: 11px !important;
+      /* Nav: hamburger menu on mobile */
+      .nav-menu {
+        display: flex !important;
+        align-items: center;
+        gap: clamp(12px,2.2vw,26px);
       }
-      nav > div:last-child > a:not(:last-child) {
-        display: none; /* hide secondary nav on mobile, keep contact */
-      }
-      nav > div:last-child > a:last-child {
-        padding: 6px 12px !important;
-        font-size: 11px !important;
+      .nav-hamburger { display: none; }
+      .nav-mobile-panel { display: none; }
+      
+      @media (max-width: 768px) {
+        .nav-menu > a:not(:last-child) { display: none; }
+        .nav-hamburger { 
+          display: flex !important; 
+          flex-direction: column; 
+          gap: 5px; 
+          background: none; 
+          border: none; 
+          cursor: pointer; 
+          padding: 8px; 
+          z-index: 100;
+        }
+        .nav-hamburger span { 
+          width: 24px; 
+          height: 2px; 
+          background: #efe6d8; 
+          display: block; 
+          transition: transform .3s, opacity .3s; 
+        }
+        .nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-hamburger.active span:nth-child(2) { opacity: 0; }
+        .nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-mobile-panel {
+          display: block !important;
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 75vw;
+          max-width: 280px;
+          height: 100vh;
+          background: rgba(23,18,12,.98);
+          backdrop-filter: blur(12px);
+          border-left: 1px solid rgba(255,255,255,.07);
+          padding: 80px 24px 24px;
+          z-index: 99;
+          transition: right .3s ease;
+          flex-direction: column;
+          gap: 20px;
+        }
+        .nav-mobile-panel.open { right: 0; }
+        .nav-mobile-panel a { 
+          color: #b6a88f; 
+          font-size: 16px; 
+          padding: 12px 0; 
+          border-bottom: 1px solid rgba(255,255,255,.05); 
+        }
+        .nav-mobile-panel a:last-child { 
+          color: #f5893a; 
+          border: 1px solid #f5893a; 
+          border-radius: 999px; 
+          text-align: center; 
+          padding: 12px 24px; 
+          margin-top: 8px; 
+        }
       }
     }
   </style>
@@ -147,7 +198,7 @@
         <a href="#top" style="font-weight:700;letter-spacing:1px;font-size:15px;display:flex;align-items:center;gap:8px;font-family:'Space Mono',monospace">
           <span style="width:9px;height:9px;background:#f5893a;display:inline-block;border-radius:50%;box-shadow:0 0 10px rgba(245,137,58,.9)"></span>KM<span style="color:#f5893a;animation:blink 1.2s step-end infinite">_</span>
         </a>
-        <div style="display:flex;align-items:center;gap:clamp(12px,2.2vw,26px);font-size:12.5px;letter-spacing:.5px">
+        <div class="nav-menu" style="display:flex;align-items:center;gap:clamp(12px,2.2vw,26px);font-size:12.5px;letter-spacing:.5px">
           <a href="#about" style="color:#b6a88f">about</a>
           <a href="#skills" style="color:#b6a88f">skills</a>
           <a href="#experience" style="color:#b6a88f">experience</a>
@@ -155,7 +206,18 @@
           <a href="blog/index.html" style="color:#b6a88f">blog</a>
           <a href="mailto:kenetd98@gmail.com" style="padding:8px 16px;border:1px solid #f5893a;color:#f5893a;border-radius:999px;transition:background .2s,color .2s" style-hover="background:#f5893a;color:#17120c">contact</a>
         </div>
+        <button class="nav-hamburger" aria-label="Toggle menu" style="display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:100" onclick="toggleMobileMenu()">
+          <span></span><span></span><span></span>
+        </button>
       </nav>
+      <div class="nav-mobile-panel" style="display:none;position:fixed;top:0;right:-100%;width:75vw;max-width:280px;height:100vh;background:rgba(23,18,12,.98);backdrop-filter:blur(12px);border-left:1px solid rgba(255,255,255,.07);padding:80px 24px 24px;z-index:99;transition:right .3s ease;flex-direction:column;gap:20px" onclick="toggleMobileMenu()">
+        <a href="#about" onclick="event.stopPropagation();toggleMobileMenu()">about</a>
+        <a href="#skills" onclick="event.stopPropagation();toggleMobileMenu()">skills</a>
+        <a href="#experience" onclick="event.stopPropagation();toggleMobileMenu()">experience</a>
+        <a href="#work" onclick="event.stopPropagation();toggleMobileMenu()">work</a>
+        <a href="blog/index.html" onclick="event.stopPropagation();toggleMobileMenu()">blog</a>
+        <a href="mailto:kenetd98@gmail.com" style="color:#f5893a;border:1px solid #f5893a;border-radius:999px;text-align:center;padding:12px 24px;margin-top:8px" onclick="toggleMobileMenu()">contact</a>
+      </div>
 
       <!-- HERO -->
       <header id="top" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(48px,8vw,104px) clamp(20px,5vw,64px) clamp(40px,6vw,72px)">
@@ -281,7 +343,7 @@
                 </sc-for>
               </div>
             </div>
-            <div style="display:grid;grid-template-columns:1fr;gap:14px;max-width:500px">
+            <div id="arha-gif-container" style="display:grid;grid-template-columns:1fr;gap:14px;max-width:500px">
               <!-- ARHA GIF -->
               <div style="position:relative;aspect-ratio:16/10;overflow:hidden;border-radius:16px;background:repeating-linear-gradient(45deg,#241d15,#241d15 9px,#2b2318 9px,#2b2318 18px);border:1px solid rgba(245,137,58,.22)">
                 <img src="assets/gif/arha.gif" alt="ARHA Demo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block">
@@ -480,6 +542,41 @@
       };
     }
   }
+  </script>
+  <script>
+    // Mobile nav toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const navLinks = document.querySelector('nav > div:last-child');
+      const menuBtn = document.createElement('button');
+      menuBtn.innerHTML = '☰';
+      menuBtn.style.cssText = 'display:none;background:none;border:none;color:#efe6d8;font-size:24px;cursor:pointer;z-index:51';
+      menuBtn.setAttribute('aria-label', 'Toggle menu');
+      
+      // Insert menu button before nav links
+      const nav = document.querySelector('nav');
+      nav.insertBefore(menuBtn, navLinks);
+      
+      function checkMobile() {
+        if (window.innerWidth <= 768) {
+          menuBtn.style.display = 'block';
+          navLinks.style.display = navLinks.classList.contains('open') ? 'flex' : 'none';
+          navLinks.style.cssText = 'position:absolute;top:100%;left:0;right:0;background:rgba(23,18,12,.95);flex-direction:column;padding:20px;gap:16px;border-top:1px solid rgba(255,255,255,.07);text-align:center';
+        } else {
+          menuBtn.style.display = 'none';
+          navLinks.style.cssText = '';
+          navLinks.classList.remove('open');
+        }
+      }
+      
+      menuBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        menuBtn.innerHTML = navLinks.classList.contains('open') ? '✕' : '☰';
+        navLinks.style.display = navLinks.classList.contains('open') ? 'flex' : 'none';
+      });
+      
+      window.addEventListener('resize', checkMobile);
+      checkMobile();
+    });
   </script>
 </body>
 </html>
