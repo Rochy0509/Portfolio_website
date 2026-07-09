@@ -544,38 +544,28 @@
   }
   </script>
   <script>
-    // Mobile nav toggle
-    document.addEventListener('DOMContentLoaded', function() {
-      const navLinks = document.querySelector('nav > div:last-child');
-      const menuBtn = document.createElement('button');
-      menuBtn.innerHTML = '☰';
-      menuBtn.style.cssText = 'display:none;background:none;border:none;color:#efe6d8;font-size:24px;cursor:pointer;z-index:51';
-      menuBtn.setAttribute('aria-label', 'Toggle menu');
-      
-      // Insert menu button before nav links
-      const nav = document.querySelector('nav');
-      nav.insertBefore(menuBtn, navLinks);
-      
-      function checkMobile() {
-        if (window.innerWidth <= 768) {
-          menuBtn.style.display = 'block';
-          navLinks.style.display = navLinks.classList.contains('open') ? 'flex' : 'none';
-          navLinks.style.cssText = 'position:absolute;top:100%;left:0;right:0;background:rgba(23,18,12,.95);flex-direction:column;padding:20px;gap:16px;border-top:1px solid rgba(255,255,255,.07);text-align:center';
-        } else {
-          menuBtn.style.display = 'none';
-          navLinks.style.cssText = '';
-          navLinks.classList.remove('open');
-        }
+    // Mobile nav toggle for hamburger + slide panel
+    function toggleMobileMenu() {
+      const btn = document.querySelector('.nav-hamburger');
+      const panel = document.querySelector('.nav-mobile-panel');
+      const isOpen = panel.classList.toggle('open');
+      btn.classList.toggle('active');
+      panel.style.right = isOpen ? '0' : '-100%';
+    }
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        const panel = document.querySelector('.nav-mobile-panel');
+        if (panel.classList.contains('open')) toggleMobileMenu();
       }
-      
-      menuBtn.addEventListener('click', function() {
-        navLinks.classList.toggle('open');
-        menuBtn.innerHTML = navLinks.classList.contains('open') ? '✕' : '☰';
-        navLinks.style.display = navLinks.classList.contains('open') ? 'flex' : 'none';
-      });
-      
-      window.addEventListener('resize', checkMobile);
-      checkMobile();
+    });
+    // Ensure panel is closed on resize > 768
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 768) {
+        document.querySelector('.nav-mobile-panel').classList.remove('open');
+        document.querySelector('.nav-hamburger').classList.remove('active');
+        document.querySelector('.nav-mobile-panel').style.right = '-100%';
+      }
     });
   </script>
 </body>
